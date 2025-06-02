@@ -18,7 +18,7 @@ const ComputerModelControls = ({ size }: CubeProps) => {
     }
   }, []);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (modelRef.current) {
       modelRef.current.rotation.y += delta * 0.5;
     }
