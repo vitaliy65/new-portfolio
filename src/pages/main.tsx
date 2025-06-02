@@ -17,7 +17,7 @@ export default function Main() {
 
   return (
     <AnimatePresence mode="wait">
-      <main className="w-full h-full relative overflow-hidden center ">
+      <main className="w-full h-full relative overflow-hidden center">
         {!isUnloaded ? (
           <AnimatedUnload
             direction="scaleUP"
@@ -33,29 +33,32 @@ export default function Main() {
               <AnimatedIcon
                 icon={<CodeIcon size="64px" />}
                 delay={0}
-                paddingImg="p-5 rounded-full"
+                paddingImg="sm:p-5 p-3 rounded-full"
                 color="shadow-purple-800"
+                className="sm:w-full sm:h-full w-16 h-16"
               />
               <AnimatedIcon
                 icon={<UserIcon size="64px" />}
                 delay={0.1}
-                paddingImg="p-5 rounded-full"
+                paddingImg="sm:p-5 p-3 rounded-full"
                 color="shadow-purple-800"
+                className="sm:w-full sm:h-full w-16 h-16"
               />
               <AnimatedIcon
                 icon={<GithubIcon size="64px" />}
                 delay={0.2}
-                paddingImg="p-5 rounded-full"
+                paddingImg="sm:p-5 p-3 rounded-full"
                 color="shadow-purple-800"
+                className="sm:w-full sm:h-full w-16 h-16"
               />
             </div>
             <div className="flex flex-col font-bold mb-16">
-              <span className="center gap-8 flex-row text-9xl text-center text-shadow-md">
+              <span className="center sm:gap-8 gap-2 flex-row xl:text-9xl sm:text-7xl text-4xl text-center text-shadow-md">
                 <AnimatedText text="Welcome" direction="left" />
                 <AnimatedText text="To" direction="left" delay={0.2} />
                 <AnimatedText text="My" direction="left" delay={0.3} />
               </span>
-              <div className="flex gap-x-10 text-9xl text-shadow-md">
+              <div className="flex sm:gap-10 gap-2 xl:text-9xl sm:text-7xl text-4xl text-shadow-md">
                 <AnimatedText
                   text="Portfolio"
                   direction="down"
@@ -71,8 +74,8 @@ export default function Main() {
               </div>
             </div>
             <AnimatedContainer direction="down" delay={0.5} className="center">
-              <div className="bg-gradient-to-r from-blue-800/25 to-purple-800/25 blur-xl p-4 w-xl h-24 rounded-xl"></div>
-              <div className="absolute text-5xl bg-gradient-to-r from-blue-800 to-purple-800 bg-clip-text text-transparent flex items-center gap-2">
+              <div className="bg-gradient-to-r from-blue-800/25 to-purple-800/25 blur-xl p-4 sm:w-xl w-2xs h-24 rounded-xl"></div>
+              <div className="absolute sm:text-5xl text-xl bg-gradient-to-r from-blue-800 to-purple-800 bg-clip-text text-transparent flex items-center gap-2">
                 <InternetIcon size="48px" className="text-blue-800" />
                 <Typewriter
                   onInit={(typewriter) => {
