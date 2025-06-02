@@ -54,6 +54,7 @@ export default function ProjectsSection() {
                 href={project.liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
               >
                 Live Demo <ExternalLink />
               </a>
@@ -62,6 +63,7 @@ export default function ProjectsSection() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
               >
                 Source Code
                 <ArrowRight />
