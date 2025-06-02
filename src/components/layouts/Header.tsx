@@ -58,7 +58,7 @@ export default function Header() {
         ) : (
           <div>
             <AnimatePresence>
-              {!open ? (
+              {!open && (
                 <motion.button
                   className={`menu-button center`}
                   onClick={toggleMenu}
@@ -74,7 +74,11 @@ export default function Header() {
                 >
                   {open ? <X /> : <Menu />}
                 </motion.button>
-              ) : (
+              )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+              {open && (
                 <motion.div
                   className="absolute w-screen h-screen inset-0 bg-black/20"
                   initial={{ opacity: 0 }}
@@ -83,7 +87,7 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                 >
                   <motion.div
-                    className="absolute top-0 right-0 h-screen w-xs bg-zinc-950 rounded-l-lg shadow-lg p-4 mr-4 flex flex-col gap-2"
+                    className="absolute top-0 right-0 h-screen sm:w-xs w-[calc(100%-1rem)] bg-zinc-950 rounded-l-lg shadow-lg p-4 mr-4 flex flex-col gap-2"
                     initial={{ opacity: 0, translateX: "100%" }}
                     animate={{
                       opacity: 1,

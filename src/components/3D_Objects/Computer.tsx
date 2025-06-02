@@ -38,7 +38,7 @@ function Computer() {
   const { progress } = useProgress();
 
   return (
-    <div className="w-full aspect-square">
+    <div className="max-sm:h-full w-full aspect-square">
       <Canvas
         className="w-full h-full"
         camera={{ position: [0, 0, 10], fov: 50 }}

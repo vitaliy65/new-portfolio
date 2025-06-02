@@ -12,13 +12,13 @@ export default function WelcomeSection() {
   return (
     <div className="mt-32 lg:mx-32 md:mx-24 sm:mx-12 mx-6">
       <section
-        className="grid grid-cols-3 grid-rows-2 gap-4 xl:grid-cols-2 xl:grid-rows-2 xl:gap-2"
+        className="grid grid-cols-3 grid-rows-6 xl:grid-cols-2 sm:grid-rows-2 xl:gap-4"
         id="welcome"
       >
         {/* left side */}
-        <div className="full flex-col col-span-3 sm:col-span-2 xl:col-span-1">
+        <div className="full flex-col col-span-2 max-sm:col-span-3 max-sm:row-span-2 xl:col-span-1">
           <AnimatedContainer delay={0.1} direction="down">
-            <div className="text-7xl font-bold mb-8">
+            <div className="min-[500px]:text-7xl text-5xl font-bold mb-8">
               <p>Frontend</p>
               <TextGradient
                 text="Developer"
@@ -28,7 +28,7 @@ export default function WelcomeSection() {
             </div>
           </AnimatedContainer>
           <AnimatedContainer delay={0.4} direction="down">
-            <div className="text-4xl font-medium mb-8">
+            <div className="min-[500px]:text-4xl text-xl font-medium mb-8">
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter.typeString("Software Engineer student").start();
@@ -41,7 +41,7 @@ export default function WelcomeSection() {
           </AnimatedContainer>
         </div>
 
-        <div className="col-span-3 row-start-2 xl:col-span-1 full">
+        <div className="full max-xl:col-span-3 max-sm:col-span-3 max-sm:row-span-3 max-sm:row-start-4 sm:row-start-2 xl:row-start-2">
           <AnimatedContainer delay={0.7} direction="down">
             <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 mb-8 text-lg">
               <MainTextBanner text="React" className="bg-white/10 h-14" />
@@ -122,8 +122,12 @@ export default function WelcomeSection() {
         </div>
 
         {/* right side */}
-        <div className="sm:w-full sm:h-full flex justify-center items-center w-0 xl:row-span-2 xl:col-start-2">
-          <AnimatedContainer className="full" delay={0.6} direction="right">
+        <div className="sm:w-full sm:h-full h-32 flex justify-center items-center max-sm:col-span-3 max-sm:row-start-3 max-xl:col-start-3 xl:row-span-2">
+          <AnimatedContainer
+            className="full-center"
+            delay={0.6}
+            direction="right"
+          >
             <Computer />
           </AnimatedContainer>
         </div>

@@ -35,8 +35,8 @@ export default function AboutMeSection() {
       {/* second */}
       <div className="full grid xl:grid-cols-2 xl:grid-rows-3 grid-cols-3 grid-rows-3  mt-24 xl:gap-8">
         {/* main text */}
-        <div className="col-span-3 sm:col-span-2 xl:col-span-1">
-          <div className="text-6xl font-bold">
+        <div className="col-span-2 xl:col-span-1">
+          <div className="sm:text-6xl text-3xl font-bold">
             <AnimatedContainer direction="left" delay={0.1}>
               <TextGradient
                 text="Hello, I'm"
@@ -53,7 +53,7 @@ export default function AboutMeSection() {
         {/* about me text */}
         <div className="col-span-3 xl:col-span-1 row-start-2 row-span-2 col-start-1">
           <AnimatedContainer direction="left" delay={0.4}>
-            <p className="text-2xl mt-8 text-justify leading-relaxed text-gray-400">
+            <p className="md:text-2xl mt-8 text-justify leading-relaxed text-gray-400">
               I am a software engineering student who is interested in
               developing as Front-End and Back-End development. I am focused on
               creating engaging digital experiences and always try to find the
@@ -61,14 +61,14 @@ export default function AboutMeSection() {
             </p>
           </AnimatedContainer>
           <AnimatedContainer direction="left" delay={0.2}>
-            <div className="flex xl:h-16 h-12 flex-row gap-4 mt-8 font-bold">
+            <div className="flex xl:h-16 h-12 sm:flex-row flex-col gap-4 mt-8 sm:font-bold sm:text-lg text-sm">
               <a
                 className="full-center"
                 href="/CV - Vitaliy Posvistak.pdf"
                 download="CV - Vitaliy Posvistak.pdf"
               >
                 <ContainerGradient
-                  className="full-center gap-2 transition-all text-lg px-4 py-2 rounded-lg cursor-pointer"
+                  className="full-center gap-2 transition-all px-4 py-2 rounded-lg cursor-pointer"
                   direction="bottom-right"
                   from="from-purple-800 hover:from-purple-700 active:from-purple-900"
                   to="to-indigo-400 hover:to-indigo-300 active:to-indigo-500"
@@ -88,7 +88,7 @@ export default function AboutMeSection() {
                     portfolioSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="full-center gap-2 transition-all text-lg px-4 py-2 rounded-lg bg-black/20 active:bg-black/40 hover:border-indigo-700 border-1 border-indigo-300 cursor-pointer"
+                className="full-center gap-2 transition-all px-4 py-2 rounded-lg bg-black/20 active:bg-black/40 hover:border-indigo-700 border-1 border-indigo-300 cursor-pointer"
               >
                 <span className="flex items-center gap-2 text-indigo-300">
                   <Code /> View Projects
@@ -99,7 +99,7 @@ export default function AboutMeSection() {
         </div>
 
         {/* my img */}
-        <div className="flex w-0 sm:w-full justify-center items-center xl:row-span-3 xl:col-start-2 xl:row-start-1">
+        <div className="flex w-full justify-center items-center xl:row-span-3 xl:col-start-2 xl:row-start-1">
           <AnimatedContainer direction="down">
             <ContainerGlow
               glowColor="shadow-purple-800"

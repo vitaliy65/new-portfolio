@@ -18,7 +18,7 @@ export default function TechStackSection() {
   }, []);
 
   return (
-    <section className="grid xl:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8">
+    <section className="grid min-[60rem]:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8">
       {techStack.map((ts, index) => {
         let direction: "up" | "down" | "left" | "right" | "zoomIn" | "zoomOut" =
           "left";
@@ -47,17 +47,17 @@ export default function TechStackSection() {
           >
             <div
               key={index}
-              className="flex flex-col h-fit bg-white/15 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2"
+              className="flex flex-col full bg-white/15 rounded-lg p-2 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2"
             >
-              <div className="relative w-full aspect-square">
+              <div className="w-full">
                 <img
                   src={ts.img}
                   alt={ts.name}
-                  className="w-full h-full object-contain p-4"
+                  className="full object-contain sm:p-4 p-2"
                   loading="lazy"
                 />
               </div>
-              <p className="text-center mt-2">{ts.name}</p>
+              <p className="text-center mt-2 max-sm:text-sm">{ts.name}</p>
             </div>
           </AnimatedContainer>
         );

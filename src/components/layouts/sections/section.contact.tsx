@@ -223,7 +223,7 @@ export default function ContactSection() {
                     key={index}
                     onMouseEnter={() => setSelectedSocial(index)}
                     onMouseLeave={() => setSelectedSocial(-1)}
-                    className="flex items-center gap-4 bg-white/15 p-8 rounded-xl"
+                    className="flex items-center gap-4 bg-white/15 p-4 sm:p-6 rounded-xl"
                     href={s.canBeCopied ? `#` : s.link}
                     target={!s.canBeCopied ? "_blank" : undefined}
                     rel="noopener noreferrer"

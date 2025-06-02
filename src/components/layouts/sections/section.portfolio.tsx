@@ -43,7 +43,7 @@ export default function PortfolioSection() {
       {/* second */}
       <div className="full mt-24 gap-8">
         {/* select case buttons */}
-        <div className="bg-white/10 h-32 rounded-xl shadow-lg center gap-4 p-4 text-xl font-bold">
+        <div className="bg-white/10 h-32 rounded-xl shadow-lg center gap-4 p-4 sm:text-xl sm:font-bold">
           <NavButton
             icon={CodeIcon}
             label="Projects"
