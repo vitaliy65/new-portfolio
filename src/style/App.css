@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+#root{
+  @apply min-h-screen w-full;
+  scroll-behavior: smooth;
+}
+
+@theme {  
+  --shadow-3xl: 0 0 24px; 
+  --ring-blur: var(--tw-ring-inset) 0 0 1.5px calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+}
+
+.full-center {
+  @apply flex items-center justify-center h-full w-full;
+}
+
+.screen-center {
+  @apply flex items-center justify-center h-screen w-screen;
+}
+
+.full {
+  @apply h-full w-full;
+}
+
+.center{
+  @apply flex items-center justify-center;
+}
+
+.center-between{
+  @apply flex items-center justify-between;
+}
+
+.bottom{
+  @apply flex items-end justify-center;
+}
+
+.up{
+  @apply flex items-start justify-center;
+}
+
+.left{
+  @apply flex items-center justify-start;
+}
+
+.right{
+  @apply flex items-center justify-end;
+}

@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.menu-button{
+    @apply text-white text-2xl hover:border-2 active:border-purple-800 hover:border-white w-12 h-12 rounded-xl bg-purple-950
+}
