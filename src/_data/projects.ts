@@ -10,7 +10,7 @@ export const projects: Project[] = [
   {
     title: "Discord Clone",
     description:
-      "My second project to explore fullstack development isDiscord Clone, a live chat application that mimics the functionality of Discord, allowing users to create servers, channels and participate in text conversations. Currently in development, and only available from the desktop version.",
+      "My second project to explore fullstack development is Discord Clone, a live chat application that mimics the functionality of Discord, allowing users to create servers, channels and participate in text conversations. Currently in development, and only available from the desktop version.",
     image: "/projects/Discord-clone.png",
     link: "https://github.com/vitaliy65/discord-clone",
     liveDemo: "https://discord-clone-dq4f.onrender.com/login",
