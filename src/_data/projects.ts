@@ -10,7 +10,7 @@ export const projects: Project[] = [
   {
     title: "Discord Clone",
     description:
-      "Discord Clone is a real-time chat application that mimics the functionality of Discord, allowing users to create servers, channels, and engage in voice and text communication.",
+      "My second project to explore fullstack development isDiscord Clone, a live chat application that mimics the functionality of Discord, allowing users to create servers, channels and participate in text conversations. Currently in development, and only available from the desktop version.",
     image: "/projects/Discord-clone.png",
     link: "https://github.com/vitaliy65/discord-clone",
     liveDemo: "https://discord-clone-dq4f.onrender.com/login",
@@ -18,15 +18,15 @@ export const projects: Project[] = [
   {
     title: "Office UA",
     description:
-      "Office UA is a marketplace platform designed for Ukrainian businesses, offering a wide range of products and services to support local commerce.",
+      "My first project on UI design, the main goal was to make the transition to different pages of the site, and to implement the sorting of elements. different pages of the site, and realise the sorting of elements. Also it was necessary to implement a slider on the main page.",
     image: "/projects/Office-UA.jpg",
     link: "https://github.com/vitaliy65/Office-UA",
-    liveDemo: "https://github.com/vitaliy65",
+    liveDemo: "https://office-ua.vercel.app/",
   },
   {
     title: "Better Fitness App",
     description:
-      "Better Fitness App is a comprehensive fitness application that provides users with personalized workout plans, nutrition tracking, and progress monitoring to help them achieve their fitness goals.",
+      "My first project to learn backend development using Node.js + express using REAST API. The main goal, loading content on the client, remembering the user's choice and sending the information to mail.",
     image: "/projects/Better-Fitness.png",
     link: "https://github.com/vitaliy65/better-fitness",
     liveDemo: "https://better-fitness.vercel.app/",
