@@ -1,6 +1,7 @@
 import { techStack } from "../../../../_data/techStack";
 import AnimatedContainer from "../../../animated/AnimatedContainer";
 import { useEffect, useState } from "react";
+import { Directions } from "../../../animated/types";
 
 export default function TechStackSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
@@ -18,25 +19,24 @@ export default function TechStackSection() {
   }, []);
 
   return (
-    <section className="grid min-[60rem]:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8">
+    <section className="techstack-grid">
       {techStack.map((ts, index) => {
-        let direction: "up" | "down" | "left" | "right" | "zoomIn" | "zoomOut" =
-          "left";
+        let direction: Directions = Directions.LEFT;
 
         if (isXlScreen) {
           // Для 3 колонок
           const column = index % 3;
 
           if (column === 0) {
-            direction = "left";
+            direction = Directions.LEFT;
           } else if (column === 1) {
-            direction = "down";
+            direction = Directions.DOWN;
           } else {
-            direction = "right";
+            direction = Directions.RIGHT;
           }
         } else {
           // Для 2 колонок
-          direction = index % 2 === 0 ? "left" : "right";
+          direction = index % 2 === 0 ? Directions.LEFT : Directions.RIGHT;
         }
 
         return (
@@ -45,19 +45,11 @@ export default function TechStackSection() {
             key={index}
             className="flex full"
           >
-            <div
-              key={index}
-              className="flex flex-col full bg-white/15 rounded-lg p-2 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2"
-            >
-              <div className="w-full">
-                <img
-                  src={ts.img}
-                  alt={ts.name}
-                  className="full object-contain sm:p-4 p-2"
-                  loading="lazy"
-                />
+            <div key={index} className="techstack-container">
+              <div className="techstack-img-container">
+                <img src={ts.img} alt={ts.name} className="techstack-img" />
               </div>
-              <p className="text-center mt-2 max-sm:text-sm">{ts.name}</p>
+              <p className="techstack-text">{ts.name}</p>
             </div>
           </AnimatedContainer>
         );

@@ -15,7 +15,7 @@ export default function HeaderButton({
 }: HeaderButtonProps) {
   return (
     <a
-      className="text-xl font-bold active:text-indigo-600 focus:text-indigo-600 py-4 hover:border-b-2 active:border-indigo-600 focus:border-b-2"
+      className="header-main-menu-button"
       onClick={(e) => {
         e.preventDefault();
         onClick?.();

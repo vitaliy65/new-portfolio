@@ -3,25 +3,23 @@ import ContainerGlow from "../../custom-containers/Container-glow";
 import AnimatedContainer from "../../animated/AnimatedContainer";
 import { Code, File, Sparkle } from "lucide-react";
 import ContainerGradient from "../../custom-containers/Container-gradient";
+import { Directions } from "../../animated/types";
 
 export default function AboutMeSection() {
   return (
-    <section
-      className="center flex-col lg:mx-32 md:mx-24 sm:mx-12 mx-6 my-68"
-      id="about"
-    >
+    <section className="about-section-main" id="about">
       {/* first */}
-      <div className="full-center flex-col gap-4">
-        <AnimatedContainer direction="zoomIn" delay={0.1}>
+      <div className="about-header-main-container">
+        <AnimatedContainer direction={Directions.ZOOMIN} delay={0.1}>
           <TextGradient
             text="About Me"
             from="from-purple-800"
             to="to-blue-800"
-            className="sm:text-8xl text-5xl font-bold"
+            className="about-header-main-text"
           />
         </AnimatedContainer>
-        <AnimatedContainer direction="zoomIn" delay={0.15}>
-          <p className="center lg:text-xl sm:text-base text-xs text-gray-500">
+        <AnimatedContainer direction={Directions.ZOOMIN} delay={0.15}>
+          <p className="about-header-text-container">
             <Sparkle className="w-4 h-4" />
             <span className="px-3">
               Transforming ideas into digital experiences with passion and
@@ -33,45 +31,43 @@ export default function AboutMeSection() {
       </div>
 
       {/* second */}
-      <div className="full grid xl:grid-cols-2 xl:grid-rows-3 grid-cols-3 grid-rows-3  mt-24 xl:gap-8">
+      <div className="about-section-grid">
         {/* main text */}
-        <div className="col-span-2 xl:col-span-1">
-          <div className="sm:text-6xl text-3xl font-bold">
-            <AnimatedContainer direction="left" delay={0.1}>
-              <TextGradient
-                text="Hello, I'm"
-                from="from-purple-800"
-                to="to-blue-800"
-              />
-            </AnimatedContainer>
-            <AnimatedContainer direction="left" delay={0.2}>
-              <p>Posvistak Vitaliy</p>
-            </AnimatedContainer>
-          </div>
+        <div className="about-header-container">
+          <AnimatedContainer direction={Directions.LEFT} delay={0.1}>
+            <TextGradient
+              text="Hello, I'm"
+              from="from-purple-800"
+              to="to-blue-800"
+            />
+          </AnimatedContainer>
+          <AnimatedContainer direction={Directions.LEFT} delay={0.2}>
+            <p>Posvistak Vitaliy</p>
+          </AnimatedContainer>
         </div>
 
         {/* about me text */}
-        <div className="col-span-3 xl:col-span-1 row-start-2 row-span-2 col-start-1">
-          <AnimatedContainer direction="left" delay={0.4}>
-            <p className="md:text-2xl mt-8 text-justify leading-relaxed text-gray-400">
+        <div className="about-description-container">
+          <AnimatedContainer direction={Directions.LEFT} delay={0.4}>
+            <p className="about-description">
               I am a software engineering student who is interested in
               developing as Front-End and Back-End development. I am focused on
               creating engaging digital experiences and always try to find the
               best solution in every project.
             </p>
           </AnimatedContainer>
-          <AnimatedContainer direction="left" delay={0.2}>
-            <div className="flex xl:h-16 h-12 sm:flex-row flex-col gap-4 mt-8 sm:font-bold sm:text-lg text-sm">
+          <AnimatedContainer direction={Directions.LEFT} delay={0.2}>
+            <div className="about-buttons-container">
               <a
                 className="full-center"
                 href="/CV - Vitaliy Posvistak.pdf"
                 download="CV - Vitaliy Posvistak.pdf"
               >
                 <ContainerGradient
-                  className="full-center gap-2 transition-all px-4 py-2 rounded-lg cursor-pointer"
+                  className="button-cv"
                   direction="bottom-right"
-                  from="from-purple-800 hover:from-purple-700 active:from-purple-900"
-                  to="to-indigo-400 hover:to-indigo-300 active:to-indigo-500"
+                  from="button-cv-gradient-from"
+                  to="button-cv-gradient-to"
                   isButton={true}
                 >
                   <div className="flex items-center gap-2">
@@ -88,9 +84,9 @@ export default function AboutMeSection() {
                     portfolioSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="full-center gap-2 transition-all px-4 py-2 rounded-lg bg-black/20 active:bg-black/40 hover:border-indigo-700 border-1 border-indigo-300 cursor-pointer"
+                className="button-to-projects"
               >
-                <span className="flex items-center gap-2 text-indigo-300">
+                <span className="button-projects">
                   <Code /> View Projects
                 </span>
               </a>
@@ -99,12 +95,12 @@ export default function AboutMeSection() {
         </div>
 
         {/* my img */}
-        <div className="flex w-full justify-center items-center xl:row-span-3 xl:col-start-2 xl:row-start-1">
-          <AnimatedContainer direction="down">
+        <div className="about-img-container">
+          <AnimatedContainer direction={Directions.DOWN}>
             <ContainerGlow
               glowColor="shadow-purple-800"
               size="32px"
-              className="w-full center overflow-hidden rounded-full h-fit xl:w-96 xl:h-96"
+              className="about-img"
             >
               <img
                 src="/me.jpg"

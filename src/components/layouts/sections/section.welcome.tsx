@@ -7,131 +7,129 @@ import AnimatedIcon from "../../animated/AnimatedIcon";
 import Telegram from "../../../assets/component/Telegram";
 import Computer from "../../3D_Objects/Computer";
 import AnimatedContainer from "../../animated/AnimatedContainer";
+import { Directions } from "../../animated/types";
 
 export default function WelcomeSection() {
   return (
-    <div className="mt-32 lg:mx-32 md:mx-24 sm:mx-12 mx-6">
-      <section
-        className="grid grid-cols-3 grid-rows-6 xl:grid-cols-2 sm:grid-rows-2 xl:gap-4"
-        id="welcome"
-      >
-        {/* left side */}
-        <div className="full flex-col col-span-2 max-sm:col-span-3 max-sm:row-span-2 xl:col-span-1">
-          <AnimatedContainer delay={0.1} direction="down">
-            <div className="min-[500px]:text-7xl text-5xl font-bold mb-8">
-              <p>Frontend</p>
-              <TextGradient
-                text="Developer"
-                from="from-purple-800"
-                to="to-blue-800"
-              />
-            </div>
-          </AnimatedContainer>
-          <AnimatedContainer delay={0.4} direction="down">
-            <div className="min-[500px]:text-4xl text-xl font-medium mb-8">
-              <Typewriter
-                onInit={(typewriter) => {
-                  typewriter.typeString("Software Engineer student").start();
-                }}
-                options={{
-                  cursor: "",
-                }}
-              />
-            </div>
-          </AnimatedContainer>
-        </div>
+    <section className="welcome-section-main" id="welcome">
+      {/* left side */}
+      <div className="welcome-section-left-side-1">
+        <AnimatedContainer delay={0.1} direction={Directions.DOWN}>
+          <div className="welcome-section-header">
+            <p>Frontend</p>
+            <TextGradient
+              text="Developer"
+              from="from-purple-800"
+              to="to-blue-800"
+            />
+          </div>
+        </AnimatedContainer>
+        <AnimatedContainer delay={0.4} direction={Directions.DOWN}>
+          <p className="welcome-section-header-handwrite">
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter.typeString("Software Engineer student").start();
+              }}
+              options={{
+                cursor: "",
+              }}
+            />
+          </p>
+        </AnimatedContainer>
+      </div>
 
-        <div className="full max-xl:col-span-3 max-sm:col-span-3 max-sm:row-span-3 max-sm:row-start-4 sm:row-start-2 xl:row-start-2">
-          <AnimatedContainer delay={0.7} direction="down">
-            <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 mb-8 text-lg">
-              <MainTextBanner text="React" className="bg-white/10 h-14" />
-              <MainTextBanner text="JavaScript" className="bg-white/10 h-14" />
-              <MainTextBanner text="TypeScript" className="bg-white/10 h-14" />
-              <MainTextBanner text="Tailwindcss" className="bg-white/10 h-14" />
-            </div>
-          </AnimatedContainer>
-          <AnimatedContainer delay={0.9} direction="down">
-            <div className="flex flex-row gap-4 text-lg">
-              <ContainerGlow
-                glowColor="shadow-purple-800"
-                className="w-full h-16 center rounded-xl overflow-hidden"
-              >
-                <a
-                  href="https://github.com/vitaliy65"
-                  target="_blank"
-                  className="bg-black cursor-pointer hover:bg-gray-900 active:bg-gray-950 hover:gap-4 full-center gap-2 transition-all"
-                >
-                  Projects
-                  <ExternalLink size={20} />
-                </a>
-              </ContainerGlow>
-              <ContainerGlow
-                glowColor="shadow-purple-800"
-                className="w-full h-16 center rounded-xl overflow-hidden"
-              >
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="bg-black cursor-pointer hover:bg-gray-900 active:bg-gray-950 hover:gap-4 full-center gap-2 transition-all"
-                >
-                  Contact
-                  <Contact size={20} />
-                </a>
-              </ContainerGlow>
-            </div>
-          </AnimatedContainer>
-          <AnimatedContainer delay={1.2} direction="down">
-            <div className="flex flex-row gap-8 text-lg mt-10 xl:justify-start justify-center">
-              <a href="https://github.com/vitaliy65" target="_blank">
-                <AnimatedIcon
-                  icon={<Github size="64px" />}
-                  delay={0}
-                  paddingImg="sm:p-4 p-2"
-                  className="w-12 h-12 sm:w-20 sm:h-20 rounded-xl cursor-pointer"
-                  color="shadow-purple-800 hover:shadow-purple-600 transition-all duration-300 hover:scale-110 active:scale-100 active:shadow-purple-800"
-                />
-              </a>
+      <div className="welcome-section-left-side-2">
+        <AnimatedContainer delay={0.7} direction={Directions.DOWN}>
+          <div className="badges-container">
+            <MainTextBanner text="React" />
+            <MainTextBanner text="JavaScript" />
+            <MainTextBanner text="TypeScript" />
+            <MainTextBanner text="Tailwindcss" />
+          </div>
+        </AnimatedContainer>
+
+        <AnimatedContainer delay={0.9} direction={Directions.DOWN}>
+          <div className="welcome-section-buttons-container">
+            <ContainerGlow
+              glowColor="shadow-purple-800"
+              className="welcome-section-button-container"
+            >
               <a
-                href="https://www.linkedin.com/in/vitaliy-posvistak-7887082b8/"
+                href="https://github.com/vitaliy65"
                 target="_blank"
+                className="welcome-section-button full-center"
               >
-                <AnimatedIcon
-                  icon={<Linkedin size="64px" />}
-                  delay={0}
-                  paddingImg="sm:p-4 p-2"
-                  className="w-12 h-12 sm:w-20 sm:h-20 rounded-xl cursor-pointer"
-                  color="shadow-purple-800 hover:shadow-purple-600 transition-all duration-300 hover:scale-110 active:scale-100 active:shadow-purple-800"
-                />
+                Projects
+                <ExternalLink size={20} />
               </a>
-              <a href="https://t.me/Vitalas_P" target="_blank">
-                <AnimatedIcon
-                  icon={<Telegram size="64px" />}
-                  delay={0}
-                  paddingImg="sm:p-4 p-2"
-                  className="w-12 h-12 sm:w-20 sm:h-20 rounded-xl cursor-pointer"
-                  color="shadow-purple-800 hover:shadow-purple-600 transition-all duration-300 hover:scale-110 active:scale-100 active:shadow-purple-800"
-                />
+            </ContainerGlow>
+            <ContainerGlow
+              glowColor="shadow-purple-800"
+              className="welcome-section-button-container"
+            >
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="welcome-section-button full-center"
+              >
+                Contact
+                <Contact size={20} />
               </a>
-            </div>
-          </AnimatedContainer>
-        </div>
+            </ContainerGlow>
+          </div>
+        </AnimatedContainer>
 
-        {/* right side */}
-        <div className="sm:w-full sm:h-full h-32 flex justify-center items-center max-sm:col-span-3 max-sm:row-start-3 max-xl:col-start-3 xl:row-span-2">
-          <AnimatedContainer
-            className="full-center"
-            delay={0.6}
-            direction="right"
-          >
-            <Computer />
-          </AnimatedContainer>
-        </div>
-      </section>
-    </div>
+        <AnimatedContainer delay={1.2} direction={Directions.DOWN}>
+          <div className="welcome-section-links-container">
+            <a href="https://github.com/vitaliy65" target="_blank">
+              <AnimatedIcon
+                icon={<Github size="64px" />}
+                delay={0}
+                paddingImg="sm:p-4 p-2"
+                className="link-box"
+                color="link-color"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vitaliy-posvistak-7887082b8/"
+              target="_blank"
+            >
+              <AnimatedIcon
+                icon={<Linkedin size="64px" />}
+                delay={0}
+                paddingImg="sm:p-4 p-2"
+                className="link-box"
+                color="link-color"
+              />
+            </a>
+            <a href="https://t.me/Vitalas_P" target="_blank">
+              <AnimatedIcon
+                icon={<Telegram size="64px" />}
+                delay={0}
+                paddingImg="sm:p-4 p-2"
+                className="link-box"
+                color="link-color"
+              />
+            </a>
+          </div>
+        </AnimatedContainer>
+      </div>
+
+      {/* right side */}
+      <div className="welcome-section-right-side">
+        <AnimatedContainer
+          className="computer-container"
+          delay={0.6}
+          direction={Directions.RIGHT}
+        >
+          <Computer />
+        </AnimatedContainer>
+      </div>
+    </section>
   );
 }

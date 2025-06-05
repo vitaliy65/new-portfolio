@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@import "./theme.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./sections/section-welcome.css";
+@import "./sections/section-portfolio.css";
+@import "./sections/section-about.css";
+@import "./sections/section-contact.css";
+@import "./sections/section-loading.css";
 
 #root{
   @apply min-h-screen w-full;

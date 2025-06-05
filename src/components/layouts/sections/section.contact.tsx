@@ -13,6 +13,7 @@ import {
 import { socials } from "../../../_data/socials";
 import { ToastContainer, toast } from "react-toastify";
 import AnimatedContainer from "../../animated/AnimatedContainer";
+import { Directions } from "../../animated/types";
 
 interface FormErrors {
   name: string;
@@ -78,22 +79,19 @@ export default function ContactSection() {
   };
 
   return (
-    <section
-      className="center flex-col lg:mx-32 md:mx-24 sm:mx-12 mx-6 my-68"
-      id="contact"
-    >
+    <section className="contact-section-main" id="contact">
       {/* first */}
-      <div className="full-center flex-col gap-4">
-        <AnimatedContainer direction="zoomIn" delay={0.1}>
+      <div className="contact-header-main-container">
+        <AnimatedContainer direction={Directions.ZOOMIN} delay={0.1}>
           <TextGradient
             text="Contact Me"
             from="from-purple-800"
             to="to-blue-800"
-            className="sm:text-8xl text-6xl font-bold"
+            className="contact-header-main-text"
           />
         </AnimatedContainer>
-        <AnimatedContainer direction="zoomIn" delay={0.15}>
-          <p className="center lg:text-xl sm:text-base text-xs text-gray-500">
+        <AnimatedContainer direction={Directions.ZOOMIN} delay={0.1}>
+          <p className="contact-header-text-container">
             <Sparkle className="w-4 h-4" />
             <span className="px-3 text-center">
               Get a question or want to work together? Just drop me a line!
@@ -104,17 +102,17 @@ export default function ContactSection() {
       </div>
 
       {/* second */}
-      <AnimatedContainer direction="left">
-        <div className="full mt-24 p-6 gap-8 bg-white/15 max-w-2xl rounded-xl">
-          <div className="full flex top flex-row gap-4 mb-8">
+      <AnimatedContainer direction={Directions.LEFT}>
+        <div className="contact-container">
+          <div className="contact-title-container">
             <div>
               <TextGradient
                 text="Get In Touch"
                 from="from-purple-800"
                 to="to-blue-800"
-                className="sm:text-6xl text-4xl font-bold mb-2"
+                className="contact-title"
               />
-              <p className="text-gray-400">
+              <p className="contact-description">
                 Have something to discuss? Send me a message, and I'll get back
                 to you as soon as possible.
               </p>
@@ -123,11 +121,11 @@ export default function ContactSection() {
           </div>
           <form onSubmit={handleSubmit} className="full flex flex-col gap-8">
             {/* name */}
-            <div className="flex flex-col gap-4">
-              <AnimatedContainer direction="down" delay={0.1}>
+            <div className="contact-form-container">
+              <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
                 <div>
                   <div className="relative">
-                    <User className="absolute left-2 top-3 w-8 h-8 text-stone-400" />
+                    <User className="contact-form-icon" />
                     <input
                       type="text"
                       placeholder="Your Name"
@@ -137,20 +135,20 @@ export default function ContactSection() {
                       onChange={(e) =>
                         setFormFields({ ...formFields, name: e.target.value })
                       }
-                      className="p-4 pl-12 bg-white/10 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                      className="contact-input-field"
                     />
                   </div>
-                  <label className="text-red-400 text-sm mb-2" htmlFor="name">
+                  <label className="contact-error-lable" htmlFor="name">
                     {errors.name}
                   </label>
                 </div>
               </AnimatedContainer>
 
               {/* email */}
-              <AnimatedContainer direction="down" delay={0.2}>
+              <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
                 <div>
                   <div className="relative">
-                    <Mail className="absolute left-2 top-3 w-8 h-8 text-stone-400" />
+                    <Mail className="contact-form-icon" />
                     <input
                       type="email"
                       placeholder="Your Email"
@@ -160,19 +158,20 @@ export default function ContactSection() {
                       onChange={(e) =>
                         setFormFields({ ...formFields, email: e.target.value })
                       }
-                      className="p-4 pl-12 bg-white/10 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                      className="contact-input-field"
                     />
                   </div>
-                  <label className="text-red-400 text-sm mb-2" htmlFor="email">
+                  <label className="contact-error-lable" htmlFor="email">
                     {errors.email}
                   </label>
                 </div>
               </AnimatedContainer>
+
               {/* message */}
-              <AnimatedContainer direction="down" delay={0.3}>
+              <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
                 <div>
                   <div className="relative">
-                    <MessageCircleHeartIcon className="absolute left-2 top-4 w-8 h-8 text-stone-400" />
+                    <MessageCircleHeartIcon className="contact-form-icon" />
                     <textarea
                       placeholder="Your Message"
                       id="message"
@@ -184,46 +183,43 @@ export default function ContactSection() {
                           message: e.target.value,
                         })
                       }
-                      className="p-4 pl-12 bg-white/10 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 h-32 w-full"
+                      className="contact-input-message"
                     ></textarea>
                   </div>
-                  <label
-                    className="text-red-400 text-sm mb-2"
-                    htmlFor="message"
-                  >
+                  <label className="contact-error-lable" htmlFor="message">
                     {errors.message}
                   </label>
                 </div>
               </AnimatedContainer>
             </div>
+
             {/* submit button */}
-            <AnimatedContainer direction="down" delay={0.4}>
+            <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
               <ContainerGradient
                 isButton={true}
                 isInForm={true}
                 from="from-purple-800"
                 to="to-blue-800"
-                className="p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
-            transition-all duration-200 hover:scale-102 full-center text-lg font-semibold active:scale-97 gap-2"
+                className="contact-submit-button"
               >
                 <Send /> Send Message
               </ContainerGradient>
             </AnimatedContainer>
           </form>
-          <AnimatedContainer direction="down" delay={0.5}>
-            <div className="flex flex-col gap-4 mt-8">
-              <p className="left gap-2">
-                <span className="w-12 h-0 border-2 border-indigo-500"></span>
+          <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
+            <div className="contact-under-form-container">
+              <p className="contact-under-from-title">
+                <span className="break-line"></span>
                 Connect With Me
               </p>
 
-              <div className="grid sm:grid-rows-2 grid-rows-4 sm:grid-cols-2 grid-cols-1 gap-4">
+              <div className="contact-link-grid">
                 {socials.map((s, index) => (
                   <a
                     key={index}
                     onMouseEnter={() => setSelectedSocial(index)}
                     onMouseLeave={() => setSelectedSocial(-1)}
-                    className="flex items-center gap-4 bg-white/15 p-4 sm:p-6 rounded-xl"
+                    className="contact-link-bg"
                     href={s.canBeCopied ? `#` : s.link}
                     target={!s.canBeCopied ? "_blank" : undefined}
                     rel="noopener noreferrer"
@@ -241,14 +237,13 @@ export default function ContactSection() {
                   >
                     <img
                       src={s.img}
-                      className={`w-12 h-12 object-contain ${
+                      className={`contact-link-img ${
                         selectedSocial === index ? "scale-150" : ""
-                      } transition-all duration-200`}
-                      loading="lazy"
+                      }`}
                     />
                     <div>
                       <p>{s.name}</p>
-                      <p className="text-stone-400">{s.myTag}</p>
+                      <p className="contact-link-tag">{s.myTag}</p>
                     </div>
                   </a>
                 ))}

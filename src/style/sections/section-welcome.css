@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+.welcome-section-main{
+ @apply grid grid-cols-3 grid-rows-6 xl:grid-cols-2 sm:grid-rows-2 xl:gap-4 mt-32 lg:mx-32 md:mx-24 sm:mx-12 mx-6
+}
+
+.welcome-section-left-side-1{
+    @apply h-full w-full flex-col col-span-2 max-sm:col-span-3 max-sm:row-span-2 xl:col-span-1
+}
+
+.welcome-section-left-side-2{
+    @apply h-full w-full max-xl:col-span-3 max-sm:col-span-3 max-sm:row-span-3 max-sm:row-start-4 sm:row-start-2 xl:row-start-2
+}
+
+.welcome-section-right-side{
+    @apply sm:w-full sm:h-full h-32 flex justify-center items-center max-sm:col-span-3 max-sm:row-start-3 max-xl:col-start-3 xl:row-span-2
+}
+
+.welcome-section-header{
+    @apply min-[500px]:text-7xl text-5xl font-bold mb-8
+}
+
+.welcome-section-header-handwrite{
+    @apply min-[500px]:text-4xl text-xl font-medium mb-8
+}
+
+.welcome-section-buttons-container{
+    @apply flex flex-row gap-4 text-lg
+}
+
+.welcome-section-button-container{
+    @apply w-full h-16 justify-center items-center rounded-xl overflow-hidden
+}
+
+.welcome-section-button{
+    @apply bg-black cursor-pointer hover:bg-gray-900 active:bg-gray-950 hover:gap-4 gap-2 transition-all
+}
+
+.welcome-section-links-container{
+    @apply flex flex-row gap-8 text-lg mt-10 xl:justify-start justify-center
+}
+
+
+
+.link-color{
+    @apply shadow-purple-800 hover:shadow-purple-600 transition-all duration-300 hover:scale-110 active:scale-100 active:shadow-purple-800
+}
+
+.link-box{
+    @apply w-12 h-12 sm:w-20 sm:h-20 rounded-xl cursor-pointer
+}
+
+
+
+.badges-container{
+    @apply grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 mb-8 text-lg
+}
+
+.badge{
+    @apply flex flex-row px-4 py-2 w-full justify-center items-center rounded-full gap-2 transition-all bg-white/10 h-14
+}
+
+
+.computer-container{
+    @apply flex aspect-square sm:w-full max-sm:h-full mx-auto
+}

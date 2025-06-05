@@ -11,7 +11,7 @@ export default function OptimizedBackground({
 }: OptimizedBackgroundProps) {
   return (
     <motion.div
-      className={`${className} transition-opacity duration-200 bg-center object-cover`}
+      className={`${className}`}
       style={{ backgroundImage: `url(${imageUrl})` }}
       initial={{ opacity: 1 }}
       animate={{ opacity: [1, 0.2, 1] }}

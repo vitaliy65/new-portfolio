@@ -1,0 +1,116 @@
+.portfolio-section-main{
+    @apply flex justify-center items-center flex-col lg:mx-32 md:mx-24 sm:mx-12 mx-6 my-68
+}
+
+.portfolio-header-container{
+    @apply flex h-full w-full justify-center items-center flex-col gap-4
+}
+
+.portfolio-header-main{
+    @apply sm:text-8xl text-5xl font-bold text-center
+}
+
+.portfolio-header-text-container{
+    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-gray-500
+}
+
+.portfolio-container{
+    @apply mt-24 gap-8
+}
+
+.portfolio-navigation-container{
+    @apply bg-white/10 h-32 rounded-xl shadow-lg flex justify-center items-center gap-4 p-4 sm:text-xl sm:font-bold
+}
+
+.portfolio-nav-button{
+    @apply rounded-lg flex-col focus:bg-white/20 cursor-pointer transition-colors duration-200
+}
+
+.portfolio-nav-button:active{
+    @apply bg-white/20
+}
+
+.text-sparkle{
+    @apply w-4 h-4
+}
+
+
+/* certificate section */
+.certificate-grid{
+    @apply grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-8
+}
+
+.certificate-container{
+    @apply flex h-full w-full bg-white/15 rounded-lg
+}
+
+.certificate-link{
+    @apply flex flex-col h-fit p-4 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2
+}
+
+.certificate-img{
+    @apply object-cover rounded-lg
+}
+
+
+
+
+/* Projects section */
+.projects-grid{
+    @apply grid md:grid-cols-2 grid-cols-1 gap-4 mt-8
+}
+
+.project-card-bg{
+    @apply flex flex-col bg-white/15 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 justify-between cursor-pointer
+}
+
+.project-card-img-container{
+    @apply aspect-video mb-4
+}
+
+.project-card-img{
+    @apply object-cover rounded-lg mb-4 transition-transform duration-200
+}
+
+.project-card-title{
+    @apply text-xl font-semibold mb-2
+}
+
+.project-card-description{
+    @apply text-gray-300 mb-4
+}
+
+.project-card-buttons-container{
+    @apply flex justify-between items-center flex-col lg:flex-row gap-2
+}
+
+.project-card-button{
+    @apply flex p-4 py-2 rounded-lg bg-white/5 justify-center items-center lg:w-fit w-full hover:scale-105 active:hover:scale-95 transition-transform
+}
+
+.project-card-button--demo{
+    @apply flex p-4 py-2 rounded-lg justify-center items-center lg:w-34 w-full border border-gray-500 hover:scale-105 active:hover:scale-95 transition-transform
+}
+
+
+/* Tech stack section */
+.techstack-grid{
+    @apply grid min-[60rem]:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8
+}
+
+.techstack-container{
+    @apply flex flex-col w-full h-full bg-white/15 rounded-lg p-2 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2
+}
+
+.techstack-img-container{
+    @apply w-full
+}
+
+.techstack-img{
+    @apply w-full h-full object-contain sm:p-4 p-2
+}
+
+.techstack-text{
+    @apply text-center mt-2 max-sm:text-sm
+}
+

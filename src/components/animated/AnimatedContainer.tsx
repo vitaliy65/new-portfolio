@@ -1,14 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import type { ReactNode } from "react";
 import { useRef } from "react";
-
-type Direction = "up" | "down" | "left" | "right" | "zoomIn" | "zoomOut";
+import { Directions } from "./types";
 
 interface AnimatedContainerProps {
   children: ReactNode;
   delay?: number;
-  direction?: Direction;
+  direction?: Directions;
   className?: string;
+  onUnload?: () => void;
+  onLoad?: () => void;
 }
 
 /**
@@ -22,40 +23,43 @@ interface AnimatedContainerProps {
 export default function AnimatedContainer({
   children,
   delay = 0,
-  direction = "left",
+  direction = Directions.LEFT,
   className = "",
+  onUnload,
+  onLoad,
 }: AnimatedContainerProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const getInitialPosition = (dir: Direction) => {
+  const getInitialPosition = (dir: Directions) => {
     switch (dir) {
-      case "left":
-        return { translateX: -100 };
-      case "right":
-        return { translateX: 100 };
-      case "up":
-        return { translateY: -100 };
-      case "down":
-        return { translateY: 100 };
-      case "zoomIn":
-        return { scale: 0 };
-      case "zoomOut":
-        return { scale: 2 };
+      case Directions.LEFT:
+        return { opacity: 0, translateX: -100 };
+      case Directions.RIGHT:
+        return { opacity: 0, translateX: 100 };
+      case Directions.UP:
+        return { opacity: 0, translateY: -100 };
+      case Directions.DOWN:
+        return { opacity: 0, translateY: 100 };
+      case Directions.ZOOMIN:
+        return { opacity: 0, scale: 0 };
+      case Directions.ZOOMOUT:
+        return { opacity: 0, scale: 2 };
     }
   };
 
   return (
     <motion.div
       ref={ref}
-      className={className}
-      initial={{ opacity: 0, ...getInitialPosition(direction) }}
+      className={`${className ? className : ""}`}
+      initial={{ ...getInitialPosition(direction) }}
       animate={
         isInView
           ? { opacity: 1, translateX: 0, translateY: 0, scale: 1 }
-          : { opacity: 0, ...getInitialPosition(direction) }
+          : { ...getInitialPosition(direction) }
       }
       transition={{ duration: 0.3, delay }}
+      onAnimationComplete={onUnload}
     >
       {children}
     </motion.div>

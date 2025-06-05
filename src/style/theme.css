@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+.light{
+    @apply flex inset-0 bg-white -z-10 text-black
+}
+
+.dark{
+    @apply flex inset-0 bg-[url(/bg/InitialLoadBG.webp)] -z-10 bg-no-repeat bg-fixed bg-center text-white
+}

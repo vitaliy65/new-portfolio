@@ -38,17 +38,12 @@ function Computer() {
   const { progress } = useProgress();
 
   return (
-    <div className="max-sm:h-full w-full aspect-square">
-      <Canvas
-        className="w-full h-full"
-        camera={{ position: [0, 0, 10], fov: 50 }}
-      >
-        <ambientLight intensity={0.5} />
-        <Suspense fallback={<Html center>{progress} % loaded</Html>}>
-          <ComputerModelControls size={8} />
-        </Suspense>
-      </Canvas>
-    </div>
+    <Canvas className="full" camera={{ position: [0, 0, 10], fov: 50 }}>
+      <ambientLight intensity={0.5} />
+      <Suspense fallback={<Html center>{progress} % loaded</Html>}>
+        <ComputerModelControls size={8} />
+      </Suspense>
+    </Canvas>
   );
 }
 

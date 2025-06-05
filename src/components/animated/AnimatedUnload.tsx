@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import type { ReactNode } from "react";
-
-type Direction = "scaleUP" | "scaleDOWN";
+import { DirectionsUnload } from "./types";
 
 interface AnimatedContainerProps {
   /** Дочірні елементи для анімації */
@@ -9,7 +8,7 @@ interface AnimatedContainerProps {
   /** Затримка перед початком анімації в мілісекундах (за замовчуванням: 0) */
   delay?: number;
   /** Напрямок анімації: "scaleUP" - масштабування вгору, "scaleDOWN" - масштабування вниз (за замовчуванням: "scaleUP") */
-  direction?: Direction;
+  direction?: DirectionsUnload;
   /** Додаткові CSS класи для контейнера */
   className?: string;
   /** Функція зворотного виклику, яка виконується після завершення анімації вивантаження */
@@ -31,16 +30,16 @@ interface AnimatedContainerProps {
 export default function AnimatedUnload({
   children,
   delay = 0,
-  direction = "scaleUP",
+  direction = DirectionsUnload.scaleUP,
   className = "",
   onUnload,
 }: AnimatedContainerProps) {
-  const getInitialPosition = (dir: Direction) => {
+  const getInitialPosition = (dir: DirectionsUnload) => {
     switch (dir) {
-      case "scaleUP":
+      case DirectionsUnload.scaleUP:
         return { scale: 1.5 };
-      case "scaleDOWN":
-        return { translateX: 0 };
+      case DirectionsUnload.scaleDOWN:
+        return { scale: 0 };
     }
   };
 

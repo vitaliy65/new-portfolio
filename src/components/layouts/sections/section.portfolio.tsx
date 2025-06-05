@@ -7,6 +7,7 @@ import NavButton from "./portfolio/_components/NavButton";
 import { useState } from "react";
 import { AnimatePresence } from "motion/react";
 import AnimatedContainer from "../../animated/AnimatedContainer";
+import { Directions } from "../../animated/types";
 
 export default function PortfolioSection() {
   const [activeSection, setActiveSection] = useState<
@@ -14,52 +15,46 @@ export default function PortfolioSection() {
   >("projects");
 
   return (
-    <section
-      className="center flex-col lg:mx-32 md:mx-24 sm:mx-12 mx-6 my-68"
-      id="portfolio"
-    >
+    <section className="portfolio-section-main" id="portfolio">
       {/* first */}
-      <div className="full-center flex-col gap-4">
-        <AnimatedContainer direction="zoomIn" delay={0.1}>
+      <div className="portfolio-header-container">
+        <AnimatedContainer direction={Directions.ZOOMIN} delay={0.1}>
           <TextGradient
             text="Portfolio Showcase"
             from="from-purple-800"
             to="to-blue-800"
-            className="sm:text-8xl text-5xl font-bold"
+            className="portfolio-header-main"
           />
         </AnimatedContainer>
-        <AnimatedContainer direction="zoomIn" delay={0.15}>
-          <p className="center lg:text-xl sm:text-base text-xs text-gray-500">
-            <Sparkle className="w-4 h-4" />
+        <AnimatedContainer direction={Directions.ZOOMIN} delay={0.15}>
+          <p className="portfolio-header-text-container">
+            <Sparkle className="text-sparkle" />
             <span className="px-3 text-center">
               Here you can find my projects, completed courses and certificates,
               as well as the tech stack I work with and also created this site.
             </span>
-            <Sparkle className="w-4 h-4" />
+            <Sparkle className="text-sparkle" />
           </p>
         </AnimatedContainer>
       </div>
 
       {/* second */}
-      <div className="full mt-24 gap-8">
+      <div className="portfolio-container full">
         {/* select case buttons */}
-        <div className="bg-white/10 h-32 rounded-xl shadow-lg center gap-4 p-4 sm:text-xl sm:font-bold">
+        <div className="portfolio-navigation-container">
           <NavButton
             icon={CodeIcon}
             label="Projects"
-            isActive={activeSection === "projects"}
             onClick={() => setActiveSection("projects")}
           />
           <NavButton
             icon={FileArchive}
             label="Certificates"
-            isActive={activeSection === "certificates"}
             onClick={() => setActiveSection("certificates")}
           />
           <NavButton
             icon={BrainCircuit}
             label="Tech Stack"
-            isActive={activeSection === "techstack"}
             onClick={() => setActiveSection("techstack")}
           />
         </div>
