@@ -37,7 +37,7 @@
 
 /* certificate section */
 .certificate-grid{
-    @apply grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-8
+    @apply grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-8 overflow-hidden
 }
 
 .certificate-container{
@@ -57,7 +57,7 @@
 
 /* Projects section */
 .projects-grid{
-    @apply grid md:grid-cols-2 grid-cols-1 gap-4 mt-8
+    @apply grid md:grid-cols-2 grid-cols-1 gap-4 mt-8 overflow-hidden
 }
 
 .project-card-bg{
@@ -95,7 +95,7 @@
 
 /* Tech stack section */
 .techstack-grid{
-    @apply grid min-[60rem]:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8
+    @apply grid min-[60rem]:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8 overflow-hidden
 }
 
 .techstack-container{

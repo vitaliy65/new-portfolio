@@ -1,18 +1,15 @@
 import { motion } from "motion/react";
 
 interface OptimizedBackgroundProps {
-  imageUrl: string;
   className?: string;
 }
 
-export default function OptimizedBackground({
-  imageUrl,
+export default function AnimatedBackGround({
   className = "",
 }: OptimizedBackgroundProps) {
   return (
     <motion.div
       className={`${className}`}
-      style={{ backgroundImage: `url(${imageUrl})` }}
       initial={{ opacity: 1 }}
       animate={{ opacity: [1, 0.2, 1] }}
       transition={{
