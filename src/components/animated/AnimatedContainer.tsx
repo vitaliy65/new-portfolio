@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, scale, useInView } from "framer-motion";
 import type { ReactNode } from "react";
 import { useRef } from "react";
 import { Directions } from "./types";
@@ -26,7 +26,6 @@ export default function AnimatedContainer({
   direction = Directions.LEFT,
   className = "",
   onUnload,
-  onLoad,
 }: AnimatedContainerProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });

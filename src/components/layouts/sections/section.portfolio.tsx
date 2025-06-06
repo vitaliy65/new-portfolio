@@ -8,11 +8,13 @@ import { useState } from "react";
 import { AnimatePresence } from "motion/react";
 import AnimatedContainer from "../../animated/AnimatedContainer";
 import { Directions } from "../../animated/types";
+import { useAppSelector } from "../../../_hooks/hooks";
 
 export default function PortfolioSection() {
   const [activeSection, setActiveSection] = useState<
     "projects" | "certificates" | "techstack"
   >("projects");
+  const theme = useAppSelector((s) => s.theme.theme);
 
   return (
     <section className="portfolio-section-main" id="portfolio">
@@ -41,7 +43,11 @@ export default function PortfolioSection() {
       {/* second */}
       <div className="portfolio-container full">
         {/* select case buttons */}
-        <div className="portfolio-navigation-container">
+        <div
+          className={`portfolio-navigation-container ${
+            theme === "light" && "light"
+          }`}
+        >
           <NavButton
             icon={CodeIcon}
             label="Projects"

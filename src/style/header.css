@@ -1,34 +1,61 @@
 @import "tailwindcss";
 
 .header-main{
-    @apply w-full h-24 mb-4 bg-black/40 backdrop-blur-3xl bg-cover bg-center lg:px-32 md:px-24 sm:px-12 px-6 fixed z-10
+    @apply flex w-full h-24 mb-4 lg:px-32 md:px-24 sm:px-12 px-6 fixed z-10 justify-end
 }
 
 .header-container{
-    @apply flex items-center justify-between py-4
-}
-
-.header-logo-box{
-    @apply -z-10
+    @apply flex justify-end items-center w-full text-black font-semibold relative
 }
 
 .header-navigation-container{
-    @apply flex flex-row gap-12
+    @apply flex justify-center items-center w-fit h-14 px-2 rounded-full bg-white/40 shadow-md backdrop-blur-2xl bg-cover bg-center flex-row
 }
 
+.header-navigation-container .header-main-menu-button:last-of-type{
+    @apply mr-8
+}
 
 .header-main-menu-button{
-    @apply text-xl font-bold active:text-indigo-600 focus:text-indigo-600 py-4 hover:border-b-2 active:border-indigo-600 focus:border-b-2
+    @apply tracking-tight mx-4 transition-colors
+}
+
+.header-main-menu-button:hover{
+    @apply text-current/60
 }
 
 .header-side-menu-button{
-    @apply flex items-center justify-center text-white text-2xl hover:border-2 active:border-purple-800 hover:border-white w-12 h-12 rounded-xl bg-purple-950
+    @apply flex items-center justify-center text-white text-2xl w-12 h-12 rounded-xl bg-black cursor-pointer z-0
 }
 
-.header-side-menu-bg{
-    @apply absolute w-screen h-screen inset-0 bg-black/20
+.header-side-menu-button.opened{
+    @apply rounded-t-xl rounded-b-none
 }
 
 .header-side-menu-container{
-    @apply absolute top-0 right-0 h-screen sm:w-xs w-full bg-zinc-950 rounded-l-lg shadow-lg p-4 flex flex-col gap-2 mt-2
+    @apply absolute top-16 h-96 w-full bg-zinc-950 rounded-l-xl rounded-br-xl shadow-lg p-4 flex flex-col gap-2 mt-2
+}
+
+.header-side-menu-container > a:last-of-type{
+    @apply mb-auto
+}
+
+.header-side-button{
+    @apply text-white z-10 text-4xl border-b mb-2 transition-colors duration-300
+}
+
+.header-side-button:hover{
+    @apply text-white/70
+}
+
+.svg-corner{
+    @apply absolute text-black z-10 rotate-180 bottom-6 right-12
+}
+
+.theme-button{
+    @apply flex h-10 w-10 rounded-full p-2 cursor-pointer transition-all duration-200 bg-white
+}
+
+.theme-button.light{
+    @apply bg-black z-0
 }

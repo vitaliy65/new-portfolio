@@ -22,6 +22,12 @@
     @apply bg-white/10 h-32 rounded-xl shadow-lg flex justify-center items-center gap-4 p-4 sm:text-xl sm:font-bold
 }
 
+.portfolio-navigation-container.light{
+    @apply bg-black/5
+}
+
+
+
 .portfolio-nav-button{
     @apply rounded-lg flex-col focus:bg-white/20 cursor-pointer transition-colors duration-200
 }
@@ -30,6 +36,16 @@
     @apply bg-white/20
 }
 
+.portfolio-nav-button-light{
+    @apply rounded-lg flex-col focus:bg-white/20 cursor-pointer transition-colors duration-200
+}
+
+.portfolio-nav-button-light:focus{
+    @apply bg-black text-white transition-colors
+}
+
+
+
 .text-sparkle{
     @apply w-4 h-4
 }
@@ -37,15 +53,19 @@
 
 /* certificate section */
 .certificate-grid{
-    @apply grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-8 overflow-hidden
+    @apply grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-8
 }
 
 .certificate-container{
     @apply flex h-full w-full bg-white/15 rounded-lg
 }
 
+.certificate-container.light{
+    @apply bg-black/5 z-0
+}
+
 .certificate-link{
-    @apply flex flex-col h-fit p-4 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2
+    @apply flex flex-col h-fit p-4 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2 rounded-xl
 }
 
 .certificate-img{
@@ -57,11 +77,15 @@
 
 /* Projects section */
 .projects-grid{
-    @apply grid md:grid-cols-2 grid-cols-1 gap-4 mt-8 overflow-hidden
+    @apply grid md:grid-cols-2 grid-cols-1 gap-4 mt-8
 }
 
 .project-card-bg{
     @apply flex flex-col bg-white/15 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 justify-between cursor-pointer
+}
+
+.project-card-bg.light{
+    @apply bg-black/5 z-0
 }
 
 .project-card-img-container{
@@ -80,12 +104,28 @@
     @apply text-gray-300 mb-4
 }
 
+.project-card-description.light{
+    @apply text-gray-700 bg-transparent
+}
+
 .project-card-buttons-container{
     @apply flex justify-between items-center flex-col lg:flex-row gap-2
 }
 
 .project-card-button{
-    @apply flex p-4 py-2 rounded-lg bg-white/5 justify-center items-center lg:w-fit w-full hover:scale-105 active:hover:scale-95 transition-transform
+    @apply flex p-4 py-2 rounded-lg bg-white/5 justify-center items-center lg:w-fit w-full transition-transform
+}
+
+.project-card-button:hover{
+    @apply scale-105
+}
+
+.project-card-button:active{
+    @apply scale-95
+}
+
+.project-card-button.light{
+    @apply bg-black text-white z-0
 }
 
 .project-card-button--demo{
@@ -95,12 +135,17 @@
 
 /* Tech stack section */
 .techstack-grid{
-    @apply grid min-[60rem]:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8 overflow-hidden
+    @apply grid min-[60rem]:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8
 }
 
 .techstack-container{
     @apply flex flex-col w-full h-full bg-white/15 rounded-lg p-2 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2
 }
+
+.techstack-container.light{
+    @apply bg-black/5 z-0
+}
+
 
 .techstack-img-container{
     @apply w-full

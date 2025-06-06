@@ -14,6 +14,7 @@ import { socials } from "../../../_data/socials";
 import { ToastContainer, toast } from "react-toastify";
 import AnimatedContainer from "../../animated/AnimatedContainer";
 import { Directions } from "../../animated/types";
+import { useAppSelector } from "../../../_hooks/hooks";
 
 interface FormErrors {
   name: string;
@@ -33,6 +34,7 @@ export default function ContactSection() {
     message: "",
   });
   const [selectedSocial, setSelectedSocial] = useState<number>(-1);
+  const theme = useAppSelector((s) => s.theme.theme);
 
   const handleErrors = (field: string, message: string) => {
     setErrors((prev: FormErrors) => ({
@@ -103,7 +105,7 @@ export default function ContactSection() {
 
       {/* second */}
       <AnimatedContainer direction={Directions.LEFT}>
-        <div className="contact-container">
+        <div className={`contact-container ${theme === "light" && "light"}`}>
           <div className="contact-title-container">
             <div>
               <TextGradient
@@ -219,7 +221,9 @@ export default function ContactSection() {
                     key={index}
                     onMouseEnter={() => setSelectedSocial(index)}
                     onMouseLeave={() => setSelectedSocial(-1)}
-                    className="contact-link-bg"
+                    className={`contact-link-bg ${
+                      theme === "light" && "light"
+                    }`}
                     href={s.canBeCopied ? `#` : s.link}
                     target={!s.canBeCopied ? "_blank" : undefined}
                     rel="noopener noreferrer"

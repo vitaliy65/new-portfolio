@@ -4,8 +4,11 @@ import AnimatedContainer from "../../animated/AnimatedContainer";
 import { Code, File, Sparkle } from "lucide-react";
 import ContainerGradient from "../../custom-containers/Container-gradient";
 import { Directions } from "../../animated/types";
+import { useAppSelector } from "../../../_hooks/hooks";
 
 export default function AboutMeSection() {
+  const theme = useAppSelector((s) => s.theme.theme);
+
   return (
     <section className="about-section-main" id="about">
       {/* first */}
@@ -49,7 +52,13 @@ export default function AboutMeSection() {
         {/* about me text */}
         <div className="about-description-container">
           <AnimatedContainer direction={Directions.LEFT} delay={0.4}>
-            <p className="about-description">
+            <p
+              className={`${
+                theme === "light"
+                  ? "about-description-light"
+                  : "about-description"
+              }`}
+            >
               I am a software engineering student who is interested in
               developing as Front-End and Back-End development. I am focused on
               creating engaging digital experiences and always try to find the
@@ -84,9 +93,19 @@ export default function AboutMeSection() {
                     portfolioSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="button-to-projects"
+                className={`${
+                  theme === "light"
+                    ? "button-to-projects-light"
+                    : "button-to-projects"
+                }`}
               >
-                <span className="button-projects">
+                <span
+                  className={`${
+                    theme === "light"
+                      ? "button-projects-light"
+                      : "button-projects"
+                  }`}
+                >
                   <Code /> View Projects
                 </span>
               </a>
@@ -98,7 +117,9 @@ export default function AboutMeSection() {
         <div className="about-img-container">
           <AnimatedContainer direction={Directions.DOWN}>
             <ContainerGlow
-              glowColor="shadow-purple-800"
+              glowColor={`${
+                theme === "light" ? "shadow-black" : "shadow-purple-800"
+              }`}
               size="32px"
               className="about-img"
             >

@@ -17,7 +17,7 @@
 }
 
 .about-section-grid{
-    @apply h-full w-full grid xl:grid-cols-2 xl:grid-rows-3 grid-cols-3 grid-rows-3  mt-24 xl:gap-8
+    @apply h-full w-full grid xl:grid-cols-2 lg:grid-rows-2 grid-cols-3 grid-rows-3  mt-24 xl:gap-8
 }
 
 .about-header-container{
@@ -32,6 +32,10 @@
     @apply md:text-2xl mt-8 text-justify leading-relaxed text-gray-400
 }
 
+.about-description-light{
+    @apply md:text-2xl mt-8 text-justify leading-relaxed text-black
+}
+
 
 
 
@@ -40,7 +44,7 @@
 }
 
 .button-cv{
-    @apply flex h-full w-full justify-center items-center gap-2 transition-all px-4 py-2 rounded-lg cursor-pointer
+    @apply flex h-full w-full justify-center items-center gap-2 transition-all px-4 py-2 rounded-lg cursor-pointer text-white
 }
 
 .button-cv-gradient-from{
@@ -56,8 +60,17 @@
      active:bg-black/40 hover:border-indigo-700 border-1 border-indigo-300 cursor-pointer
 }
 
+.button-to-projects-light{
+    @apply flex h-full w-full justify-center items-center gap-2 transition-all px-4 py-2 rounded-lg bg-white
+     active:bg-black/40 hover:border-black/50 border-1 border-black cursor-pointer
+}
+
 .button-projects{
     @apply flex items-center gap-2 text-indigo-300
+}
+
+.button-projects-light{
+    @apply flex items-center gap-2 
 }
 
 

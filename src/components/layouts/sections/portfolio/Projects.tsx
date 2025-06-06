@@ -3,6 +3,7 @@ import { projects } from "../../../../_data/projects";
 import { useState } from "react";
 import AnimatedContainer from "../../../animated/AnimatedContainer";
 import { Directions } from "../../../animated/types";
+import { useAppSelector } from "../../../../_hooks/hooks";
 
 export default function ProjectsSection() {
   const [isHovered, setIsHovered] = useState<{
@@ -12,6 +13,7 @@ export default function ProjectsSection() {
     isHovered: false,
     index: -1,
   });
+  const theme = useAppSelector((s) => s.theme.theme);
 
   return (
     <section className="projects-grid">
@@ -26,7 +28,7 @@ export default function ProjectsSection() {
             onClick={() =>
               window.open(project.link, "_blank", "noopener,noreferrer")
             }
-            className="project-card-bg"
+            className={`project-card-bg ${theme === "light" ? "light" : ""}`}
             onMouseEnter={() => setIsHovered({ isHovered: true, index })}
             onMouseLeave={() => setIsHovered({ isHovered: false, index })}
           >
@@ -45,7 +47,11 @@ export default function ProjectsSection() {
 
               <div>
                 <h3 className="project-card-title">{project.title}</h3>
-                <p className="project-card-description">
+                <p
+                  className={`project-card-description ${
+                    theme === "light" ? "light" : ""
+                  }`}
+                >
                   {project.description}
                 </p>
               </div>
@@ -62,7 +68,9 @@ export default function ProjectsSection() {
                 Live Demo <ExternalLink />
               </a>
               <a
-                className="project-card-button"
+                className={`project-card-button ${
+                  theme === "light" ? "light" : ""
+                }`}
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"

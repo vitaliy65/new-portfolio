@@ -2,9 +2,11 @@ import { certificates } from "../../../../_data/certificates";
 import AnimatedContainer from "../../../animated/AnimatedContainer";
 import { useEffect, useState } from "react";
 import { Directions } from "../../../animated/types";
+import { useAppSelector } from "../../../../_hooks/hooks";
 
 export default function CertificateSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
+  const theme = useAppSelector((s) => s.theme.theme);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -44,7 +46,7 @@ export default function CertificateSection() {
             direction={direction}
             delay={0.1 + index * 0.05}
             key={index}
-            className="certificate-container"
+            className={`certificate-container ${theme === "light" && "light"}`}
           >
             <a
               key={index}

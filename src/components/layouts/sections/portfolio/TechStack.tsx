@@ -2,9 +2,11 @@ import { techStack } from "../../../../_data/techStack";
 import AnimatedContainer from "../../../animated/AnimatedContainer";
 import { useEffect, useState } from "react";
 import { Directions } from "../../../animated/types";
+import { useAppSelector } from "../../../../_hooks/hooks";
 
 export default function TechStackSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
+  const theme = useAppSelector((s) => s.theme.theme);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -45,7 +47,10 @@ export default function TechStackSection() {
             key={index}
             className="flex full"
           >
-            <div key={index} className="techstack-container">
+            <div
+              key={index}
+              className={`techstack-container ${theme === "light" && "light"}`}
+            >
               <div className="techstack-img-container">
                 <img src={ts.img} alt={ts.name} className="techstack-img" />
               </div>

@@ -29,7 +29,7 @@
 }
 
 .welcome-section-button-container{
-    @apply w-full h-16 justify-center items-center rounded-xl overflow-hidden
+    @apply w-full h-16 justify-center items-center rounded-xl overflow-hidden text-white
 }
 
 .welcome-section-button{
@@ -46,6 +46,10 @@
     @apply shadow-purple-800 hover:shadow-purple-600 transition-all duration-300 hover:scale-110 active:scale-100 active:shadow-purple-800
 }
 
+.link-color-light{
+    @apply shadow-black hover:shadow-black/50 transition-all duration-300 hover:scale-110 active:scale-100
+}
+
 .link-box{
     @apply w-12 h-12 sm:w-20 sm:h-20 rounded-xl cursor-pointer
 }
@@ -57,7 +61,11 @@
 }
 
 .badge{
-    @apply flex flex-row px-4 py-2 w-full justify-center items-center rounded-full gap-2 transition-all bg-white/10 h-14
+    @apply flex flex-row px-4 py-2 w-full justify-center items-center rounded-full gap-2 transition-all bg-white/15 h-14 shadow-md
+}
+
+.badge-light{
+    @apply bg-white border-black border-2
 }
 
 

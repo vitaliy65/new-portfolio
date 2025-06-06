@@ -1,10 +1,10 @@
 import HeaderButton from "./header/header.button";
-import TextGradient from "../custom-containers/Container-text-gradient";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
-
-import "../../style/header.css";
+import HeaderThemeButton from "./header/HeaderThemeButton";
+import { useAppSelector } from "../../_hooks/hooks";
+import HeaderSideButton from "./header/header.side.button";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -12,6 +12,7 @@ export default function Header() {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+  const theme = useAppSelector((s) => s.theme.theme);
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,115 +36,86 @@ export default function Header() {
   return (
     <header className="header-main">
       <div className="header-container">
-        <div className="header-logo-box">
-          <HeaderButton
-            textObj={
-              <TextGradient
-                text="Posvistak.Vitaliy"
-                direction="right"
-                from="from-purple-800"
-                to="to-blue-800"
-              />
-            }
-            href="#welcome"
-          />
-        </div>
         {windowSize.width > 880 ? (
           <div className="header-navigation-container">
             <HeaderButton text="Home" href="#welcome" />
             <HeaderButton text="About" href="#about" />
             <HeaderButton text="Portfolio" href="#portfolio" />
             <HeaderButton text="Contact" href="#contact" />
+            <HeaderThemeButton />
           </div>
         ) : (
-          <div>
-            <AnimatePresence>
-              {!open && (
-                <motion.button
-                  className="header-side-menu-button"
-                  onClick={toggleMenu}
-                  exit={{ rotate: 90 }}
-                  whileHover={{ scale: 1.2 }}
-                  transition={{
-                    type: "linear",
-                    stiffness: 300,
-                    damping: 30,
-                    duration: 0.2,
-                    ease: "easeInOut",
-                  }}
-                >
-                  {open ? <X /> : <Menu />}
-                </motion.button>
-              )}
-            </AnimatePresence>
+          <>
+            <motion.button
+              className={`header-side-menu-button ${
+                theme == "light" && "light"
+              } ${open ? "opened" : ""}`}
+              onClick={toggleMenu}
+              exit={{ rotate: 90 }}
+              transition={{
+                type: "linear",
+                stiffness: 300,
+                damping: 30,
+                duration: 0.2,
+                ease: "easeInOut",
+              }}
+            >
+              {open ? <X /> : <Menu />}
+            </motion.button>
 
             <AnimatePresence>
               {open && (
-                <motion.div
-                  className="header-side-menu-bg"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  onClick={() => setOpen(false)}
-                >
-                  <motion.div
+                <>
+                  <svg
+                    className="svg-corner"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_310_2)">
+                      <path
+                        d="M30 0H0V30C0 13.431 13.431 0 30 0Z"
+                        fill="black"
+                      ></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_310_2">
+                        <rect width="30" height="30" fill="black"></rect>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <div
                     className="header-side-menu-container"
-                    initial={{ opacity: 0, translateX: "100%" }}
-                    animate={{
-                      opacity: 1,
-                      translateX: "0%",
-                    }}
-                    transition={{
-                      type: "linear",
-                      stiffness: 300,
-                      damping: 30,
-                      duration: 0.2,
-                      ease: "easeInOut",
-                    }}
-                    exit={{ opacity: 0, translateX: "100%" }}
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <motion.button
-                      className={`header-side-menu-button`}
-                      onClick={toggleMenu}
-                      animate={{ rotate: open ? 90 : 0 }}
-                      exit={{ rotate: 0 }}
-                      whileHover={{ scale: 1.2 }}
-                      transition={{
-                        type: "linear",
-                        stiffness: 300,
-                        damping: 30,
-                        duration: 0.2,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      {open ? <X /> : <Menu />}
-                    </motion.button>
-                    <HeaderButton
+                    <HeaderSideButton
                       text="Home"
                       href="#welcome"
                       onClick={() => setOpen(false)}
                     />
-                    <HeaderButton
+                    <HeaderSideButton
                       text="About"
                       href="#about"
                       onClick={() => setOpen(false)}
                     />
-                    <HeaderButton
+                    <HeaderSideButton
                       text="Portfolio"
                       href="#portfolio"
                       onClick={() => setOpen(false)}
                     />
-                    <HeaderButton
+                    <HeaderSideButton
                       text="Contact"
                       href="#contact"
                       onClick={() => setOpen(false)}
                     />
-                  </motion.div>
-                </motion.div>
+                    <HeaderThemeButton isInMenu={true} />
+                  </div>
+                </>
               )}
             </AnimatePresence>
-          </div>
+          </>
         )}
       </div>
     </header>

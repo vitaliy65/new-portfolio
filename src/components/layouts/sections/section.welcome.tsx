@@ -8,8 +8,11 @@ import Telegram from "../../../assets/component/Telegram";
 import Computer from "../../3D_Objects/Computer";
 import AnimatedContainer from "../../animated/AnimatedContainer";
 import { Directions } from "../../animated/types";
+import { useAppSelector } from "../../../_hooks/hooks";
 
 export default function WelcomeSection() {
+  const theme = useAppSelector((s) => s.theme.theme);
+
   return (
     <section className="welcome-section-main" id="welcome">
       {/* left side */}
@@ -51,7 +54,9 @@ export default function WelcomeSection() {
         <AnimatedContainer delay={0.9} direction={Directions.DOWN}>
           <div className="welcome-section-buttons-container">
             <ContainerGlow
-              glowColor="shadow-purple-800"
+              glowColor={`${
+                theme === "light" ? "shadow-black" : "shadow-indigo-800"
+              }`}
               className="welcome-section-button-container"
             >
               <a
@@ -64,7 +69,9 @@ export default function WelcomeSection() {
               </a>
             </ContainerGlow>
             <ContainerGlow
-              glowColor="shadow-purple-800"
+              glowColor={`${
+                theme === "light" ? "shadow-black" : "shadow-indigo-800"
+              }`}
               className="welcome-section-button-container"
             >
               <a
@@ -92,7 +99,9 @@ export default function WelcomeSection() {
                 delay={0}
                 paddingImg="sm:p-4 p-2"
                 className="link-box"
-                color="link-color"
+                color={`${
+                  theme === "light" ? "link-color-light" : "link-color"
+                }`}
               />
             </a>
             <a
@@ -104,7 +113,9 @@ export default function WelcomeSection() {
                 delay={0}
                 paddingImg="sm:p-4 p-2"
                 className="link-box"
-                color="link-color"
+                color={`${
+                  theme === "light" ? "link-color-light" : "link-color"
+                }`}
               />
             </a>
             <a href="https://t.me/Vitalas_P" target="_blank">
@@ -113,7 +124,9 @@ export default function WelcomeSection() {
                 delay={0}
                 paddingImg="sm:p-4 p-2"
                 className="link-box"
-                color="link-color"
+                color={`${
+                  theme === "light" ? "link-color-light" : "link-color"
+                }`}
               />
             </a>
           </div>

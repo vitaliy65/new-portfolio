@@ -22,6 +22,11 @@
     @apply h-full w-full mt-24 p-6 gap-8 bg-white/15 max-w-2xl rounded-xl
 }
 
+.contact-container.light{
+    @apply flex flex-col bg-black/5 z-0
+}
+
+
 .contact-title-container{
     @apply h-full w-full flex flex-row gap-4 mb-8
 }
@@ -80,6 +85,10 @@
 
 .contact-link-bg{
     @apply flex items-center gap-4 bg-white/15 p-4 sm:p-6 rounded-xl
+}
+
+.contact-link-bg.light{
+    @apply bg-black text-white z-0
 }
 
 .contact-link-img{

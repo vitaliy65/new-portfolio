@@ -2,7 +2,7 @@
 
 
 .light{
-    @apply flex inset-0 bg-white -z-10 text-black
+    @apply flex inset-0 bg-[#f9f8f6] -z-10 text-black
 }
 
 .dark{
