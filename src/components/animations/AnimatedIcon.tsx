@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import ImageContainer from "../custom-containers/Container-Image";
+import ImageContainer from "../ui/Container-Image";
 import type { ReactElement } from "react";
 
 type Direction = "top" | "bottom" | "left" | "right";

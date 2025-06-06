@@ -1,10 +1,10 @@
-import { certificates } from "../../../../_data/certificates";
-import AnimatedContainer from "../../../animated/AnimatedContainer";
+import { techStack } from "../../../../_data/techStack";
+import AnimatedContainer from "../../../animations/AnimatedContainer";
 import { useEffect, useState } from "react";
-import { Directions } from "../../../animated/types";
+import { Directions } from "../../../animations/types";
 import { useAppSelector } from "../../../../_hooks/hooks";
 
-export default function CertificateSection() {
+export default function TechStackSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
   const theme = useAppSelector((s) => s.theme.theme);
 
@@ -21,8 +21,8 @@ export default function CertificateSection() {
   }, []);
 
   return (
-    <section className="certificate-grid">
-      {certificates.map((c, index) => {
+    <section className="techstack-grid">
+      {techStack.map((ts, index) => {
         let direction: Directions = Directions.LEFT;
 
         if (isXlScreen) {
@@ -44,19 +44,18 @@ export default function CertificateSection() {
         return (
           <AnimatedContainer
             direction={direction}
-            delay={0.1 + index * 0.05}
             key={index}
-            className={`certificate-container ${theme === "light" && "light"}`}
+            className="flex full"
           >
-            <a
+            <div
               key={index}
-              href={c.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
+              className={`techstack-container ${theme === "light" && "light"}`}
             >
-              <img src={c.img} className={`certificate-img`} />
-            </a>
+              <div className="techstack-img-container">
+                <img src={ts.img} alt={ts.name} className="techstack-img" />
+              </div>
+              <p className="techstack-text">{ts.name}</p>
+            </div>
           </AnimatedContainer>
         );
       })}

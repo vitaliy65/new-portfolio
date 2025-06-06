@@ -3,15 +3,15 @@ import GithubIcon from "../assets/component/Github";
 import UserIcon from "../assets/component/User";
 import InternetIcon from "../assets/component/Internet";
 import Typewriter from "typewriter-effect";
-import AnimatedIcon from "../components/animated/AnimatedIcon";
-import AnimatedText from "../components/animated/AnimatedText";
-import AnimatedContainer from "../components/animated/AnimatedContainer";
+import AnimatedIcon from "../components/animations/AnimatedIcon";
+import AnimatedText from "../components/animations/AnimatedText";
+import AnimatedContainer from "../components/animations/AnimatedContainer";
 import AnimatedBackGround from "../components/background/AnimatedBackGround";
 import { useState } from "react";
 import { AnimatePresence } from "motion/react";
-import MainLayout from "../components/layouts/MainLayout";
-import { Directions, DirectionsUnload } from "../components/animated/types";
-import AnimatedUnload from "../components/animated/AnimatedUnload";
+import MainLayout from "../components/layout/MainLayout";
+import { Directions, DirectionsUnload } from "../components/animations/types";
+import AnimatedUnload from "../components/animations/AnimatedUnload";
 
 export default function Main() {
   const [isUnloaded, setIsUnloaded] = useState(false);

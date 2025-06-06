@@ -1,4 +1,4 @@
-import TextGradient from "../../custom-containers/Container-text-gradient";
+import TextGradient from "../../ui/Container-text-gradient";
 import { BrainCircuit, CodeIcon, FileArchive, Sparkle } from "lucide-react";
 import ProjectsSection from "./portfolio/Projects";
 import CertificateSection from "./portfolio/Certificate";
@@ -6,8 +6,8 @@ import TechStackSection from "./portfolio/TechStack";
 import NavButton from "./portfolio/_components/NavButton";
 import { useState } from "react";
 import { AnimatePresence } from "motion/react";
-import AnimatedContainer from "../../animated/AnimatedContainer";
-import { Directions } from "../../animated/types";
+import AnimatedContainer from "../../animations/AnimatedContainer";
+import { Directions } from "../../animations/types";
 import { useAppSelector } from "../../../_hooks/hooks";
 
 export default function PortfolioSection() {

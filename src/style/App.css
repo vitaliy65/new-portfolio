@@ -1,7 +1,6 @@
 @import "tailwindcss";
-@import "./theme.css";
-@import "./header.css";
-@import "./footer.css";
+@import "./components/theme.css";
+@import "./components/header.css";
 @import "./sections/section-welcome.css";
 @import "./sections/section-portfolio.css";
 @import "./sections/section-about.css";

@@ -1,13 +1,13 @@
-import TextGradient from "../../custom-containers/Container-text-gradient";
+import TextGradient from "../../ui/Container-text-gradient";
 import Typewriter from "typewriter-effect";
 import MainTextBanner from "../main/MainTextBanner";
-import ContainerGlow from "../../custom-containers/Container-glow";
+import ContainerGlow from "../../ui/Container-glow";
 import { ExternalLink, Contact, Github, Linkedin } from "lucide-react";
-import AnimatedIcon from "../../animated/AnimatedIcon";
+import AnimatedIcon from "../../animations/AnimatedIcon";
 import Telegram from "../../../assets/component/Telegram";
-import Computer from "../../3D_Objects/Computer";
-import AnimatedContainer from "../../animated/AnimatedContainer";
-import { Directions } from "../../animated/types";
+import Computer from "../../three/Computer";
+import AnimatedContainer from "../../animations/AnimatedContainer";
+import { Directions } from "../../animations/types";
 import { useAppSelector } from "../../../_hooks/hooks";
 
 export default function WelcomeSection() {

@@ -1,8 +1,8 @@
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { projects } from "../../../../_data/projects";
 import { useState } from "react";
-import AnimatedContainer from "../../../animated/AnimatedContainer";
-import { Directions } from "../../../animated/types";
+import AnimatedContainer from "../../../animations/AnimatedContainer";
+import { Directions } from "../../../animations/types";
 import { useAppSelector } from "../../../../_hooks/hooks";
 
 export default function ProjectsSection() {

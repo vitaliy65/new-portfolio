@@ -1,9 +1,9 @@
-import TextGradient from "../../custom-containers/Container-text-gradient";
-import ContainerGlow from "../../custom-containers/Container-glow";
-import AnimatedContainer from "../../animated/AnimatedContainer";
+import TextGradient from "../../ui/Container-text-gradient";
+import ContainerGlow from "../../ui/Container-glow";
+import AnimatedContainer from "../../animations/AnimatedContainer";
 import { Code, File, Sparkle } from "lucide-react";
-import ContainerGradient from "../../custom-containers/Container-gradient";
-import { Directions } from "../../animated/types";
+import ContainerGradient from "../../ui/Container-gradient";
+import { Directions } from "../../animations/types";
 import { useAppSelector } from "../../../_hooks/hooks";
 
 export default function AboutMeSection() {

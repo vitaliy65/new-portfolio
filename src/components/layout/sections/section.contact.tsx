@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-import ContainerGradient from "../../custom-containers/Container-gradient";
-import TextGradient from "../../custom-containers/Container-text-gradient";
+import ContainerGradient from "../../ui/Container-gradient";
+import TextGradient from "../../ui/Container-text-gradient";
 import {
   Contact,
   Mail,
@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import { socials } from "../../../_data/socials";
 import { ToastContainer, toast } from "react-toastify";
-import AnimatedContainer from "../../animated/AnimatedContainer";
-import { Directions } from "../../animated/types";
+import AnimatedContainer from "../../animations/AnimatedContainer";
+import { Directions } from "../../animations/types";
 import { useAppSelector } from "../../../_hooks/hooks";
 
 interface FormErrors {

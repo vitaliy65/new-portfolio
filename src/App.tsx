@@ -4,8 +4,8 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import NotFound from "./pages/NotFound";
-import Main from "./pages/main";
+import NotFound from "./pages/NotFoundPage";
+import Main from "./pages/HomePage";
 import "./style/App.css";
 
 const router = createBrowserRouter(

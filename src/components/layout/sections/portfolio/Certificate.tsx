@@ -1,10 +1,10 @@
-import { techStack } from "../../../../_data/techStack";
-import AnimatedContainer from "../../../animated/AnimatedContainer";
+import { certificates } from "../../../../_data/certificates";
+import AnimatedContainer from "../../../animations/AnimatedContainer";
 import { useEffect, useState } from "react";
-import { Directions } from "../../../animated/types";
+import { Directions } from "../../../animations/types";
 import { useAppSelector } from "../../../../_hooks/hooks";
 
-export default function TechStackSection() {
+export default function CertificateSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
   const theme = useAppSelector((s) => s.theme.theme);
 
@@ -21,8 +21,8 @@ export default function TechStackSection() {
   }, []);
 
   return (
-    <section className="techstack-grid">
-      {techStack.map((ts, index) => {
+    <section className="certificate-grid">
+      {certificates.map((c, index) => {
         let direction: Directions = Directions.LEFT;
 
         if (isXlScreen) {
@@ -44,18 +44,19 @@ export default function TechStackSection() {
         return (
           <AnimatedContainer
             direction={direction}
+            delay={0.1 + index * 0.05}
             key={index}
-            className="flex full"
+            className={`certificate-container ${theme === "light" && "light"}`}
           >
-            <div
+            <a
               key={index}
-              className={`techstack-container ${theme === "light" && "light"}`}
+              href={c.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-link"
             >
-              <div className="techstack-img-container">
-                <img src={ts.img} alt={ts.name} className="techstack-img" />
-              </div>
-              <p className="techstack-text">{ts.name}</p>
-            </div>
+              <img src={c.img} className={`certificate-img`} />
+            </a>
           </AnimatedContainer>
         );
       })}
