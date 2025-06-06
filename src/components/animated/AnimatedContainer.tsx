@@ -1,4 +1,4 @@
-import { motion, scale, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import type { ReactNode } from "react";
 import { useRef } from "react";
 import { Directions } from "./types";
