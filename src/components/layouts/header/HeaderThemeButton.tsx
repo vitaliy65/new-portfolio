@@ -3,7 +3,11 @@ import { useAppDispatch, useAppSelector } from "../../../_hooks/hooks";
 import { toggleTheme } from "../../../_store/theme/themeSlice";
 import { useEffect } from "react";
 
-export default function HeaderThemeButton({ isInMenu }: { isInMenu: boolean }) {
+export default function HeaderThemeButton({
+  isInMenu,
+}: {
+  isInMenu?: boolean;
+}) {
   const theme = useAppSelector((s) => s.theme.theme);
   const dispatch = useAppDispatch();
 
