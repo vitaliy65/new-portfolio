@@ -4,6 +4,7 @@ import { useState } from "react";
 import AnimatedContainer from "../../../animations/AnimatedContainer";
 import { Directions } from "../../../animations/types";
 import { useAppSelector } from "../../../../_hooks/hooks";
+import LazyImage from "../../../ui/LazyImage";
 
 export default function ProjectsSection() {
   const [isHovered, setIsHovered] = useState<{
@@ -34,7 +35,7 @@ export default function ProjectsSection() {
           >
             <div>
               <div className="project-card-img-container">
-                <img
+                <LazyImage
                   src={project.image}
                   alt={project.title}
                   className={`full project-card-img ${

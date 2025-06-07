@@ -3,6 +3,7 @@ import AnimatedContainer from "../../../animations/AnimatedContainer";
 import { useEffect, useState } from "react";
 import { Directions } from "../../../animations/types";
 import { useAppSelector } from "../../../../_hooks/hooks";
+import LazyImage from "../../../ui/LazyImage";
 
 export default function TechStackSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
@@ -52,7 +53,11 @@ export default function TechStackSection() {
               className={`techstack-container ${theme === "light" && "light"}`}
             >
               <div className="techstack-img-container">
-                <img src={ts.img} alt={ts.name} className="techstack-img" />
+                <LazyImage
+                  src={ts.img}
+                  alt={ts.name}
+                  className="techstack-img"
+                />
               </div>
               <p className="techstack-text">{ts.name}</p>
             </div>

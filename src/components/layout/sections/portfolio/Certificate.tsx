@@ -3,6 +3,7 @@ import AnimatedContainer from "../../../animations/AnimatedContainer";
 import { useEffect, useState } from "react";
 import { Directions } from "../../../animations/types";
 import { useAppSelector } from "../../../../_hooks/hooks";
+import LazyImage from "../../../ui/LazyImage";
 
 export default function CertificateSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
@@ -55,7 +56,11 @@ export default function CertificateSection() {
               rel="noopener noreferrer"
               className="certificate-link"
             >
-              <img src={c.img} className={`certificate-img`} />
+              <LazyImage
+                src={c.img}
+                className={`certificate-img`}
+                alt={`certificate img ${index}`}
+              />
             </a>
           </AnimatedContainer>
         );
