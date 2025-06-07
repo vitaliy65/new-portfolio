@@ -148,14 +148,10 @@ export default function LazyImage({
    * CSS классы для контейнера
    * Добавляют анимацию пульсации во время загрузки
    */
-  const containerClasses = `
-    relative overflow-hidden
-    ${!isLoaded ? "animate-pulse bg-gray-200 dark:bg-gray-700" : ""}
-  `.trim();
 
   // === РЕНДЕР ===
   return (
-    <div className={containerClasses}>
+    <>
       {/* Основное изображение */}
       <img
         ref={imgRef} // Ссылка для observer
@@ -196,7 +192,7 @@ export default function LazyImage({
           </svg>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

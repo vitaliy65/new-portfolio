@@ -93,7 +93,7 @@
 }
 
 .project-card-img{
-    @apply object-cover rounded-lg mb-4 transition-transform duration-200
+    @apply object-cover rounded-lg transition-transform duration-200
 }
 
 .project-card-title{
