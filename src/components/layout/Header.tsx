@@ -77,12 +77,12 @@ export default function Header() {
                     <g clip-path="url(#clip0_310_2)">
                       <path
                         d="M30 0H0V30C0 13.431 13.431 0 30 0Z"
-                        fill="black"
+                        fill="#09090b"
                       ></path>
                     </g>
                     <defs>
                       <clipPath id="clip0_310_2">
-                        <rect width="30" height="30" fill="black"></rect>
+                        <rect width="30" height="30" fill="#09090b"></rect>
                       </clipPath>
                     </defs>
                   </svg>
