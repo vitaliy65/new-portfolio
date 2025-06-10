@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
 .header-main{
-    @apply flex w-full h-24 mb-4 lg:px-32 md:px-24 sm:px-12 px-6 fixed z-10 justify-end
+    @apply flex w-full h-20 lg:px-32 md:px-24 sm:px-12 px-6 fixed z-10 justify-end
 }
 
 .header-container{
-    @apply flex justify-end items-center w-full text-black font-semibold relative
+    @apply flex justify-end items-center w-full text-black font-semibold relative mt-2
 }
+
+.header-container.main-bg{
+    @apply bg-white/10 backdrop-blur-2xl rounded-3xl items-start
+}
+
+.header-container.main-bg.opened{
+    @apply bg-white/10 backdrop-blur-2xl rounded-t-3xl rounded-b-none h-24
+}
+
 
 .header-navigation-container{
     @apply flex justify-center items-center w-fit h-14 px-2 rounded-full bg-white/40 shadow-md backdrop-blur-2xl bg-cover bg-center flex-row
@@ -16,6 +25,8 @@
     @apply mr-8
 }
 
+
+
 .header-main-menu-button{
     @apply tracking-tight mx-4 transition-colors
 }
@@ -24,16 +35,36 @@
     @apply text-current/60
 }
 
+
+
 .header-side-menu-button{
-    @apply flex items-center justify-center text-white text-2xl w-12 h-12 rounded-xl bg-[var(--color-surface-dark)] cursor-pointer z-0
+    @apply flex items-center justify-center text-white border-white text-2xl w-10 h-10 rounded-xl bg-[var(--color-surface-dark)] cursor-pointer z-0 transition-transform
 }
 
 .header-side-menu-button.opened{
-    @apply rounded-t-xl rounded-b-none
+    @apply border
 }
 
+.menu-button-border{
+    @apply mr-4 mt-4 rounded-md
+}
+
+.menu-button-border.opened{
+    @apply shadow-[0_0_0px_16px_#09090b,_0_26px_0px_16px_#09090b] bg-[var(--color-surface-dark)]
+}
+
+.header-side-menu-button:hover{
+    @apply scale-110
+}
+
+.header-side-menu-button:active{
+    @apply scale-95
+}
+
+
+
 .header-side-menu-container{
-    @apply absolute top-16 h-96 w-full bg-zinc-950 rounded-l-xl rounded-br-xl shadow-lg p-4 flex flex-col gap-2 mt-2
+    @apply absolute top-18 h-96 w-full bg-zinc-950 rounded-l-3xl rounded-br-3xl shadow-lg p-4 flex flex-col gap-2
 }
 
 .header-side-menu-container > a:last-of-type{
@@ -49,7 +80,7 @@
 }
 
 .svg-corner{
-    @apply absolute text-black z-10 rotate-180 bottom-6 right-12
+    @apply absolute text-black z-10 rotate-180 bottom-0 right-18
 }
 
 .theme-button{

@@ -34,8 +34,12 @@ export default function Header() {
   };
 
   return (
-    <header className="header-main">
-      <div className="header-container">
+    <header className={`header-main`}>
+      <div
+        className={`header-container ${
+          windowSize.width < 880 ? "main-bg" : ""
+        } ${open ? "opened" : ""}`}
+      >
         {windowSize.width > 880 ? (
           <div className="header-navigation-container">
             <HeaderButton text="Home" href="#welcome" />
@@ -46,75 +50,80 @@ export default function Header() {
           </div>
         ) : (
           <>
-            <motion.button
-              className={`header-side-menu-button ${
-                theme == "light" && "light"
-              } ${open ? "opened" : ""}`}
-              onClick={toggleMenu}
-              exit={{ rotate: 90 }}
-              transition={{
-                type: "linear",
-                stiffness: 300,
-                damping: 30,
-                duration: 0.2,
-                ease: "easeInOut",
-              }}
-            >
-              {open ? <X /> : <Menu />}
-            </motion.button>
+            <div className={`menu-button-border ${open ? "opened" : ""}`}>
+              <motion.button
+                className={`header-side-menu-button ${
+                  theme == "light" ? "light" : ""
+                } ${open ? "opened" : ""}`}
+                onClick={toggleMenu}
+                exit={{ rotate: 90 }}
+                transition={{
+                  type: "linear",
+                  stiffness: 300,
+                  damping: 30,
+                  duration: 0.2,
+                  ease: "easeInOut",
+                }}
+              >
+                {open ? <X /> : <Menu />}
+              </motion.button>
+            </div>
 
-            <AnimatePresence>
-              {open && (
-                <>
-                  <svg
-                    className="svg-corner"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_310_2)">
-                      <path
-                        d="M30 0H0V30C0 13.431 13.431 0 30 0Z"
+            {open && (
+              <>
+                <div className="corner-left"></div>
+                <svg
+                  className="svg-corner"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_310_2)">
+                    <path
+                      d="M30 0H0V30C0 13.431 13.431 0 30 0Z"
+                      fill="var(--color-surface-dark)"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_310_2">
+                      <rect
+                        width="30"
+                        height="30"
                         fill="var(--color-surface-dark)"
-                      ></path>
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_310_2">
-                        <rect width="30" height="30" fill="var(--color-surface-dark)"></rect>
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <div
-                    className="header-side-menu-container"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <HeaderSideButton
-                      text="Home"
-                      href="#welcome"
-                      onClick={() => setOpen(false)}
-                    />
-                    <HeaderSideButton
-                      text="About"
-                      href="#about"
-                      onClick={() => setOpen(false)}
-                    />
-                    <HeaderSideButton
-                      text="Portfolio"
-                      href="#portfolio"
-                      onClick={() => setOpen(false)}
-                    />
-                    <HeaderSideButton
-                      text="Contact"
-                      href="#contact"
-                      onClick={() => setOpen(false)}
-                    />
-                    <HeaderThemeButton isInMenu={true} />
-                  </div>
-                </>
-              )}
-            </AnimatePresence>
+                      ></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+                <div
+                  className="header-side-menu-container"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <HeaderSideButton
+                    text="Home"
+                    href="#welcome"
+                    onClick={() => setOpen(false)}
+                  />
+                  <HeaderSideButton
+                    text="About"
+                    href="#about"
+                    onClick={() => setOpen(false)}
+                  />
+                  <HeaderSideButton
+                    text="Portfolio"
+                    href="#portfolio"
+                    onClick={() => setOpen(false)}
+                  />
+                  <HeaderSideButton
+                    text="Contact"
+                    href="#contact"
+                    onClick={() => setOpen(false)}
+                  />
+                  <HeaderThemeButton isInMenu={true} />
+                </div>
+              </>
+            )}
           </>
         )}
       </div>
