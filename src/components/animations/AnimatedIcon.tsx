@@ -66,10 +66,10 @@ export default function AnimatedIcon({
       initial={getInitialPosition()}
       animate={{ opacity: 1, translateX: 0, translateY: 0 }}
       transition={{ duration: 0.3, delay }}
-      className={`center ${className} `}
+      className={`center`}
     >
       <ImageContainer
-        className={`center ${className} shadow-[0_0_24px,inset_0_0_16px] ${color} object-cover overflow-hidden ${paddingImg}`}
+        className={`center ${className} ${color} object-cover overflow-hidden ${paddingImg}`}
         Img={icon}
       />
     </motion.div>

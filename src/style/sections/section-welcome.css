@@ -43,11 +43,12 @@
 
 
 .link-color{
-    @apply shadow-purple-800 hover:shadow-purple-600 transition-all duration-300 hover:scale-110 active:scale-100 active:shadow-purple-800
+    @apply border-2 border-white hover:border-white/40
+    transition-all duration-300 hover:scale-110 active:scale-100
 }
 
-.link-color-light{
-    @apply shadow-black hover:shadow-black/50 transition-all duration-300 hover:scale-110 active:scale-100
+.link-color.light{
+    @apply border-black hover:border-black/40 z-0
 }
 
 .link-box{
@@ -61,7 +62,7 @@
 }
 
 .badge{
-    @apply flex flex-row px-4 py-2 w-full justify-center items-center rounded-full gap-2 transition-all bg-white/15 h-14 shadow-md
+    @apply flex flex-row px-4 py-2 w-full justify-center items-center rounded-full gap-2 transition-all bg-[var(--color-overlay-light-15)] h-14 shadow-md
 }
 
 .badge-light{

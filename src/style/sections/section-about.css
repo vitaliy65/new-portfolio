@@ -13,7 +13,7 @@
 }
 
 .about-header-text-container{
-    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-gray-500
+    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-[var(--color-text-muted)]
 }
 
 .about-section-grid{
@@ -29,7 +29,7 @@
 }
 
 .about-description{
-    @apply md:text-2xl mt-8 text-justify leading-relaxed text-gray-400
+    @apply md:text-2xl mt-8 text-justify leading-relaxed text-[var(--color-text-muted)]
 }
 
 .about-description-light{
@@ -48,16 +48,16 @@
 }
 
 .button-cv-gradient-from{
-    @apply from-purple-800 hover:from-purple-700 active:from-purple-900
+    @apply from-[var(--color-accent-purple)] hover:from-purple-700 active:from-purple-900
 }
 
 .button-cv-gradient-to{
-    @apply to-indigo-400 hover:to-indigo-300 active:to-indigo-500
+    @apply to-[var(--color-accent-indigo)] hover:to-indigo-300 active:to-indigo-500
 }
 
 .button-to-projects{
-    @apply flex h-full w-full justify-center items-center gap-2 transition-all px-4 py-2 rounded-lg bg-black/20
-     active:bg-black/40 hover:border-indigo-700 border-1 border-indigo-300 cursor-pointer
+    @apply flex h-full w-full justify-center items-center gap-2 transition-all px-4 py-2 rounded-lg bg-[var(--color-overlay-dark-20)]
+     active:bg-black/40 hover:border-indigo-700 border-1 border-[var(--color-accent-indigo)] cursor-pointer
 }
 
 .button-to-projects-light{
@@ -66,7 +66,7 @@
 }
 
 .button-projects{
-    @apply flex items-center gap-2 text-indigo-300
+    @apply flex items-center gap-2 text-[var(--color-accent-indigo)]
 }
 
 .button-projects-light{

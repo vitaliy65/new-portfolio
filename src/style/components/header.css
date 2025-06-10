@@ -25,7 +25,7 @@
 }
 
 .header-side-menu-button{
-    @apply flex items-center justify-center text-white text-2xl w-12 h-12 rounded-xl bg-[#09090b] cursor-pointer z-0
+    @apply flex items-center justify-center text-white text-2xl w-12 h-12 rounded-xl bg-[var(--color-surface-dark)] cursor-pointer z-0
 }
 
 .header-side-menu-button.opened{

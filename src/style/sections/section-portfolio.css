@@ -11,7 +11,7 @@
 }
 
 .portfolio-header-text-container{
-    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-gray-500
+    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-[var(--color-text-muted)]
 }
 
 .portfolio-container{
@@ -19,11 +19,11 @@
 }
 
 .portfolio-navigation-container{
-    @apply bg-white/10 h-32 rounded-xl shadow-lg flex justify-center items-center gap-4 p-4 sm:text-xl sm:font-bold
+    @apply bg-[var(--color-overlay-light-10)] h-32 rounded-xl shadow-lg flex justify-center items-center gap-4 p-4 sm:text-xl sm:font-bold
 }
 
 .portfolio-navigation-container.light{
-    @apply bg-black/5
+    @apply bg-[var(--color-overlay-dark-5)]
 }
 
 
@@ -57,11 +57,11 @@
 }
 
 .certificate-container{
-    @apply flex h-full w-full bg-white/15 rounded-lg
+    @apply flex h-full w-full bg-[var(--color-overlay-light-15)] rounded-lg
 }
 
 .certificate-container.light{
-    @apply bg-black/5 z-0
+    @apply bg-[var(--color-overlay-dark-5)] z-0
 }
 
 .certificate-link{
@@ -81,11 +81,11 @@
 }
 
 .project-card-bg{
-    @apply flex flex-col bg-white/15 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 justify-between cursor-pointer
+    @apply flex flex-col bg-[var(--color-overlay-light-15)] rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 justify-between cursor-pointer
 }
 
 .project-card-bg.light{
-    @apply bg-black/5 z-0
+    @apply bg-[var(--color-overlay-dark-5)] z-0
 }
 
 .project-card-img-container{
@@ -105,7 +105,7 @@
 }
 
 .project-card-description.light{
-    @apply text-gray-700 bg-transparent
+    @apply text-[var(--color-text-muted-light)] bg-transparent
 }
 
 .project-card-buttons-container{
@@ -113,7 +113,7 @@
 }
 
 .project-card-button{
-    @apply flex p-4 py-2 rounded-lg bg-white/5 justify-center items-center lg:w-fit w-full transition-transform
+    @apply flex p-4 py-2 rounded-lg bg-[var(--color-overlay-light-5)] justify-center items-center lg:w-fit w-full transition-transform
 }
 
 .project-card-button:hover{
@@ -129,7 +129,7 @@
 }
 
 .project-card-button--demo{
-    @apply flex p-4 py-2 rounded-lg justify-center items-center lg:w-34 w-full border border-gray-500 hover:scale-105 active:hover:scale-95 transition-transform
+    @apply flex p-4 py-2 rounded-lg justify-center items-center lg:w-34 w-full border border-[var(--color-border-gray)] hover:scale-105 active:hover:scale-95 transition-transform
 }
 
 
@@ -139,11 +139,11 @@
 }
 
 .techstack-container{
-    @apply flex flex-col w-full h-full bg-white/15 rounded-lg p-2 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2
+    @apply flex flex-col w-full h-full bg-[var(--color-overlay-light-15)] rounded-lg p-2 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2
 }
 
 .techstack-container.light{
-    @apply bg-black/5 z-0
+    @apply bg-[var(--color-overlay-dark-5)] z-0
 }
 
 

@@ -13,17 +13,17 @@
 }
 
 .contact-header-text-container{
-    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-gray-500
+    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-[var(--color-text-muted)]
 }
 
 
 
 .contact-container{
-    @apply h-full w-full mt-24 p-6 gap-8 bg-white/15 max-w-2xl rounded-xl
+    @apply h-full w-full mt-24 p-6 gap-8 bg-[var(--color-overlay-light-15)] max-w-2xl rounded-xl
 }
 
 .contact-container.light{
-    @apply flex flex-col bg-black/5 z-0
+    @apply flex flex-col bg-[var(--color-overlay-dark-5)] z-0
 }
 
 
@@ -36,7 +36,7 @@
 }
 
 .contact-description{
-    @apply text-gray-400
+    @apply text-[var(--color-text-muted)]
 }
 
 
@@ -45,24 +45,24 @@
 }
 
 .contact-form-icon{
-    @apply absolute left-2 top-3 w-8 h-8 text-stone-400
+    @apply absolute left-2 top-3 w-8 h-8 text-[var(--color-text-stone)]
 }
 
 .contact-input-field{
-    @apply p-4 pl-12 bg-white/10 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full
+    @apply p-4 pl-12 bg-[var(--color-overlay-light-10)] rounded-lg border border-[var(--color-border-gray)] focus:outline-none focus:ring-2 focus:ring-[var(--color-focus-blue)] w-full
 }
 
 .contact-input-message{
-    @apply p-4 pl-12 bg-white/10 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 h-32 w-full
+    @apply p-4 pl-12 bg-[var(--color-overlay-light-10)] rounded-lg border border-[var(--color-border-gray)] focus:outline-none focus:ring-2 focus:ring-[var(--color-focus-blue)] h-32 w-full
 }
 
 .contact-submit-button{
-    @apply p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
+    @apply p-4 bg-[var(--color-button-blue)] text-white rounded-lg hover:bg-[var(--color-button-blue-hover)] 
     transition-all duration-200 hover:scale-102 flex justify-center items-center h-full w-full text-lg font-semibold active:scale-97 gap-2
 }
 
 .contact-error-lable{
-    @apply text-red-400 text-sm mb-2
+    @apply text-[var(--color-error-red)] text-sm mb-2
 }
 
 
@@ -76,7 +76,7 @@
 }
 
 .break-line{
-    @apply w-12 h-0 border-2 border-indigo-500
+    @apply w-12 h-0 border-2 border-[var(--color-accent-indigo)]
 }
 
 .contact-link-grid{
@@ -84,7 +84,7 @@
 }
 
 .contact-link-bg{
-    @apply flex items-center gap-4 bg-white/15 p-4 sm:p-6 rounded-xl
+    @apply flex items-center gap-4 bg-[var(--color-overlay-light-15)] p-4 sm:p-6 rounded-xl
 }
 
 .contact-link-bg.light{
@@ -96,5 +96,5 @@
 }
 
 .contact-link-tag{
-    @apply text-stone-400
+    @apply text-[var(--color-text-stone)]
 }

@@ -99,9 +99,7 @@ export default function WelcomeSection() {
                 delay={0}
                 paddingImg="sm:p-4 p-2"
                 className="link-box"
-                color={`${
-                  theme === "light" ? "link-color-light" : "link-color"
-                }`}
+                color={`link-color ${theme === "light" ? "light" : ""}`}
               />
             </a>
             <a
@@ -113,9 +111,7 @@ export default function WelcomeSection() {
                 delay={0}
                 paddingImg="sm:p-4 p-2"
                 className="link-box"
-                color={`${
-                  theme === "light" ? "link-color-light" : "link-color"
-                }`}
+                color={`link-color ${theme === "light" ? "light" : ""}`}
               />
             </a>
             <a href="https://t.me/Vitalas_P" target="_blank">
@@ -124,9 +120,7 @@ export default function WelcomeSection() {
                 delay={0}
                 paddingImg="sm:p-4 p-2"
                 className="link-box"
-                color={`${
-                  theme === "light" ? "link-color-light" : "link-color"
-                }`}
+                color={`link-color ${theme === "light" ? "light" : ""}`}
               />
             </a>
           </div>

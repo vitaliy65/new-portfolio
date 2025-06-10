@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 .starting-section-container-bg{
-    @apply flex items-center justify-center h-screen w-screen flex-col bg-[#08002a]
+    @apply flex items-center justify-center h-screen w-screen flex-col bg-[var(--color-primary-dark)]
 }
 
 .starting-section-bg{
-    @apply absolute inset-0 transition-opacity duration-200 bg-center object-cover bg-black/20
+    @apply absolute inset-0 transition-opacity duration-200 bg-center object-cover bg-[var(--color-overlay-dark-20)]
 }
 
 
@@ -24,7 +24,7 @@
 }
 
 .starting-section-badge--color{
-    @apply shadow-purple-800
+    @apply shadow-[var(--color-shadow-purple-primary)]
 }
 
 
