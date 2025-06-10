@@ -80,7 +80,7 @@
 }
 
 .svg-corner{
-    @apply absolute text-black z-10 rotate-180 bottom-0 right-18
+    @apply absolute text-black z-10 rotate-180 bottom-6 right-18
 }
 
 .theme-button{
