@@ -1,6 +1,6 @@
 import HeaderButton from "./header/header.button";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import HeaderThemeButton from "./header/HeaderThemeButton";
 import { useAppSelector } from "../../_hooks/hooks";
