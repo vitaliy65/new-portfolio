@@ -124,11 +124,11 @@ export default function AboutMeSection() {
               className="about-img"
             >
               <img
-                src="/me.jpg"
-                alt="Portfolio my img"
-                className="object-cover h-full"
-                width={512}
-                height={512}
+              src="/me.jpg"
+              alt="Vitaliy Posvistak - Front-end Developer and UI Designer professional headshot"
+              className="object-cover h-full"
+              width={512}
+              height={512}
               />
             </ContainerGlow>
           </AnimatedContainer>

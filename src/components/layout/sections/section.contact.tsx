@@ -216,7 +216,7 @@ export default function ContactSection() {
               </p>
 
               <div className="contact-link-grid">
-                {socials.map((s, index) => (
+                {socials.map((social, index) => (
                   <a
                     key={index}
                     onMouseEnter={() => setSelectedSocial(index)}
@@ -224,13 +224,13 @@ export default function ContactSection() {
                     className={`contact-link-bg ${
                       theme === "light" && "light"
                     }`}
-                    href={s.canBeCopied ? `#` : s.link}
-                    target={!s.canBeCopied ? "_blank" : undefined}
+                    href={social.canBeCopied ? `#` : social.link}
+                    target={!social.canBeCopied ? "_blank" : undefined}
                     rel="noopener noreferrer"
                     onClick={(e) => {
-                      if (s.canBeCopied) {
+                      if (social.canBeCopied) {
                         e.preventDefault();
-                        navigator.clipboard.writeText(s.myTag);
+                        navigator.clipboard.writeText(social.myTag);
                         toast.success("Copied to clipboard!", {
                           position: "top-right",
                           autoClose: 1500,
@@ -240,14 +240,15 @@ export default function ContactSection() {
                     }}
                   >
                     <img
-                      src={s.img}
+                      src={social.img}
+                      alt={social.alt}
                       className={`contact-link-img ${
                         selectedSocial === index ? "scale-150" : ""
                       }`}
                     />
                     <div>
-                      <p>{s.name}</p>
-                      <p className="contact-link-tag">{s.myTag}</p>
+                      <p>{social.name}</p>
+                      <p className="contact-link-tag">{social.myTag}</p>
                     </div>
                   </a>
                 ))}
