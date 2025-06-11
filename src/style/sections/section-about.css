@@ -29,11 +29,11 @@
 }
 
 .about-description{
-    @apply md:text-2xl mt-8 text-justify leading-relaxed text-[var(--color-text-muted)]
+    @apply md:text-2xl mt-8 text-justify leading-relaxed
 }
 
 .about-description-light{
-    @apply md:text-2xl mt-8 text-justify leading-relaxed text-black
+    @apply md:text-2xl mt-8 text-justify leading-relaxed
 }
 
 

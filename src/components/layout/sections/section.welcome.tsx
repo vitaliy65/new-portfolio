@@ -28,7 +28,7 @@ export default function WelcomeSection() {
           </div>
         </AnimatedContainer>
         <AnimatedContainer delay={0.4} direction={Directions.DOWN}>
-          <p className="welcome-section-header-handwrite">
+          <div className="welcome-section-header-handwrite">
             <Typewriter
               onInit={(typewriter) => {
                 typewriter.typeString("Software Engineer student").start();
@@ -37,7 +37,7 @@ export default function WelcomeSection() {
                 cursor: "",
               }}
             />
-          </p>
+          </div>
         </AnimatedContainer>
       </div>
 

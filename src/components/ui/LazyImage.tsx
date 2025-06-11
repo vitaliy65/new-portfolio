@@ -13,28 +13,28 @@ import {
 interface LazyImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string; // Основной URL изображения (обязательный)
   alt: string; // Альтернативный текст для изображения (обязательный)
-  placeholder?: string; // URL изображения-заглушки, показывается до загрузки основного
-  fallback?: string; // URL резервного изображения, показывается при ошибке загрузки
+  placeholder?: string | null; // URL изображения-заглушки, показывается до загрузки основного
+  fallback?: string | null; // URL резервного изображения, показывается при ошибке загрузки
   threshold?: number; // Порог видимости для Intersection Observer (0-1)
   rootMargin?: string; // Отступ для срабатывания загрузки (например, "50px")
   onLoad?: () => void; // Колбэк, вызывается при успешной загрузке изображения
   onError?: () => void; // Колбэк, вызывается при ошибке загрузки
   className?: string; // Дополнительные CSS классы
-  blurDataURL?: string; // Base64 размытое изображение для плавного появления
+  blurDataURL?: string | null; // Base64 размытое изображение для плавного появления
   priority?: boolean; // Если true, изображение загружается сразу (для важных изображений)
 }
 
 export default function LazyImage({
   src,
   alt,
-  placeholder,
-  fallback,
+  placeholder = null,
+  fallback = null,
   threshold = 0.1, // По умолчанию загружаем когда 10% изображения видно
   rootMargin = "50px", // Начинаем загрузку за 50px до появления в viewport
   onLoad,
   onError,
   className = "",
-  blurDataURL,
+  blurDataURL = null,
   priority = false, // По умолчанию используем ленивую загрузку
   ...props // Остальные пропсы передаются в img элемент
 }: LazyImageProps) {
@@ -42,7 +42,9 @@ export default function LazyImage({
   const [isLoaded, setIsLoaded] = useState(false); // Загружено ли изображение
   const [isInView, setIsInView] = useState(priority); // Видно ли изображение в viewport
   const [hasError, setHasError] = useState(false); // Произошла ли ошибка при загрузке
-  const [imageSrc, setImageSrc] = useState(placeholder || blurDataURL || ""); // Текущий src изображения
+  const [imageSrc, setImageSrc] = useState<string | undefined>(
+    placeholder || blurDataURL || undefined
+  ); // Текущий src изображения
 
   // === РЕФЫ ===
   const imgRef = useRef<HTMLImageElement>(null); // Ссылка на img элемент
@@ -64,9 +66,7 @@ export default function LazyImage({
    */
   const handleError = useCallback(() => {
     setHasError(true); // Помечаем что произошла ошибка
-    if (fallback) {
-      setImageSrc(fallback); // Показываем резервное изображение если оно есть
-    }
+    setImageSrc(fallback || undefined); // Показываем резервное изображение если оно есть, иначе undefined
     onError?.(); // Вызываем внешний колбэк если он есть
   }, [fallback, onError]);
 

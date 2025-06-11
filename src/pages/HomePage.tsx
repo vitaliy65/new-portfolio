@@ -12,6 +12,7 @@ import { AnimatePresence } from "motion/react";
 import MainLayout from "../components/layout/MainLayout";
 import { Directions, DirectionsUnload } from "../components/animations/types";
 import AnimatedUnload from "../components/animations/AnimatedUnload";
+import AnimatedThreeBG from "../components/three/AnimatedThreeBG";
 
 export default function Main() {
   const [isUnloaded, setIsUnloaded] = useState(false);
@@ -19,7 +20,7 @@ export default function Main() {
   return (
     <AnimatePresence mode="wait">
       {!isUnloaded ? (
-        <div className="screen-center overflow-hidden">
+        <div className="screen-center overflow-hidden bg-[url('/bg/InitialLoadBG.webp')]">
           <AnimatedBackGround className="starting-section-bg" />
           <AnimatedUnload
             direction={DirectionsUnload.scaleUP}
@@ -94,7 +95,10 @@ export default function Main() {
           </AnimatedUnload>
         </div>
       ) : (
-        <MainLayout />
+        <>
+          <AnimatedThreeBG />
+          <MainLayout />
+        </>
       )}
     </AnimatePresence>
   );

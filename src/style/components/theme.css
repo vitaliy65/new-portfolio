@@ -6,5 +6,5 @@
 }
 
 .dark{
-    @apply flex inset-0 bg-[url(/bg/InitialLoadBG.webp)] -z-10 bg-no-repeat bg-fixed bg-center text-white
+    @apply flex inset-0 -z-10 bg-no-repeat bg-fixed bg-center text-white
 }
