@@ -127,6 +127,8 @@ export default function AboutMeSection() {
                 src="/me.jpg"
                 alt="Portfolio my img"
                 className="object-cover h-full"
+                width={512}
+                height={512}
               />
             </ContainerGlow>
           </AnimatedContainer>
