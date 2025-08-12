@@ -40,7 +40,7 @@ export const initialBulbSettings: BulbSettings[] = [
       { x: 22, y: -2, z: -30, scale: 2 }, // contact
     ],
     color: 0x4a1775, // purple
-    size: 6,
+    size: 7,
     sectionIds: ["welcome", "about", "portfolio", "contact"],
   },
   // Add more bulbs as needed

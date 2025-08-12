@@ -1,84 +1,141 @@
 @import "tailwindcss";
 
-.about-section-main{
-    @apply flex justify-center items-center flex-col lg:mx-32 md:mx-24 sm:mx-12 mx-6 my-68
+.about-section-main {
+  @apply flex justify-center items-center flex-col mx-auto p-2 sm:p-10 rounded-4xl md:rounded-[96px] bg-gradient-to-b from-base-300 my-68;
 }
 
-.about-header-main-container{
-    @apply flex justify-center items-center h-full w-full flex-col gap-4
+.about-header-main-container {
+  @apply flex justify-center items-center h-full w-full flex-col gap-4;
 }
 
-.about-header-main-text{
-    @apply sm:text-8xl text-5xl font-bold
+.about-header-main-text {
+  @apply sm:text-8xl text-5xl font-bold;
 }
 
-.about-header-text-container{
-    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-[var(--color-text-muted)]
+.about-header-text-container {
+  @apply flex justify-center w-fit items-center lg:text-xl sm:text-base text-xs text-[var(--color-text-muted)];
 }
 
-.about-section-grid{
-    @apply h-full w-full grid xl:grid-cols-2 lg:grid-rows-2 grid-cols-3 grid-rows-3  mt-24 xl:gap-8
+.about-section-grid {
+  @apply h-full 
+  w-full 
+  grid 
+  gap-8
+  xl:grid-cols-2 
+  lg:grid-rows-2 
+  grid-cols-3 
+  grid-rows-3  
+  mt-24 
+  xl:gap-8;
 }
 
-.about-header-container{
-    @apply col-span-2 xl:col-span-1 sm:text-6xl text-3xl font-bold
+.about-header-container {
+  @apply w-fit 
+  h-fit
+  col-span-2 
+  row-span-2
+  xl:col-span-1 
+  sm:text-6xl 
+  text-3xl font-bold;
 }
 
-.about-description-container{
-    @apply col-span-3 xl:col-span-1 row-start-2 row-span-2 col-start-1
+.about-description-container {
+  @apply col-span-3 
+  xl:col-span-1 
+  row-start-3 
+  row-span-2 
+  col-start-1;
 }
 
-.about-description{
-    @apply md:text-2xl mt-8 text-justify leading-relaxed
+.about-description {
+  @apply md:text-2xl mt-8 text-justify leading-relaxed sm:text-xl text-base font-bold;
 }
 
-.about-description-light{
-    @apply md:text-2xl mt-8 text-justify leading-relaxed
+.about-buttons-container {
+  @apply flex xl:h-16 h-12 sm:flex-row flex-col gap-4 mt-8 sm:font-bold sm:text-lg text-sm;
 }
 
-
-
-
-.about-buttons-container{
-    @apply flex xl:h-16 h-12 sm:flex-row flex-col gap-4 mt-8 sm:font-bold sm:text-lg text-sm
+.button-cv {
+  @apply flex 
+  min-h-16 
+  bg-base-200 
+  z-0 
+  relative 
+  h-full 
+  w-full
+  justify-center 
+  items-center 
+  gap-2 px-4 py-2 
+  rounded-lg 
+  border
+  border-secondary
+  cursor-pointer 
+  text-secondary
+  overflow-hidden;
 }
 
-.button-cv{
-    @apply flex h-full w-full justify-center items-center gap-2 transition-all px-4 py-2 rounded-lg cursor-pointer text-white
+.button-cv::before {
+  content: "";
+  @apply absolute top-1/2 left-1/2 w-4 h-4 rounded-full z-10 bg-accent transform -translate-x-1/2 -translate-y-1/2 scale-0 transition-transform duration-700 ease-out;
 }
 
-.button-cv-gradient-from{
-    @apply from-[var(--color-accent-purple)] hover:from-purple-700 active:from-purple-900
+.button-cv:hover {
+  @apply -translate-y-1
+  transition-all
+  text-base-content
+  border-base-content
+  shadow-2xl;
 }
 
-.button-cv-gradient-to{
-    @apply to-[var(--color-accent-indigo)] hover:to-indigo-300 active:to-indigo-500
+.button-cv:active {
+  @apply translate-y-0
+  transition-all;
 }
 
-.button-to-projects{
-    @apply flex h-full w-full justify-center items-center gap-2 transition-all px-4 py-2 rounded-lg bg-[var(--color-overlay-dark-20)]
-     active:bg-black/40 hover:border-indigo-700 border-1 border-[var(--color-accent-indigo)] cursor-pointer
+.button-cv:hover::before {
+  @apply scale-[40];
 }
 
-.button-to-projects-light{
-    @apply flex h-full w-full justify-center items-center gap-2 transition-all px-4 py-2 rounded-lg bg-white
-     active:bg-black/40 hover:border-black/50 border-1 border-black cursor-pointer
+.button-to-projects {
+  @apply w-full min-h-16 relative cursor-pointer overflow-hidden rounded-lg border bg-base-200 p-2;
+}
+.button-to-projects-text {
+  @apply inline-block translate-x-1 transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0;
+}
+.button-to-projects-popup-box {
+  @apply absolute top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center 
+  gap-2 text-base-content opacity-0 transition-all duration-300 group-hover:-translate-x-1 group-hover:opacity-1002;
+}
+.button-to-projects-bg {
+  @apply absolute left-[20%] top-[40%] h-2 w-2 scale-[1] rounded-lg bg-primary/70 transition-all 
+  duration-300 group-hover:left-[0%] group-hover:top-[0%] group-hover:h-full group-hover:w-full group-hover:scale-[1.8] group-hover:bg-primary/70;
+}
+.button-to-projects:hover {
+  @apply transition-transform duration-300 -translate-y-1;
+}
+.button-to-projects:active {
+  @apply translate-y-0
+  transition-all;
+}
+.button-projects {
+  @apply flex items-center gap-2;
 }
 
-.button-projects{
-    @apply flex items-center gap-2 text-[var(--color-accent-indigo)]
+.about-img-container {
+  @apply grid
+  place-content-center
+  place-items-center 
+  w-full 
+  row-span-2
+  xl:row-span-3 
+  xl:col-start-2 
+  xl:row-start-1;
 }
 
-.button-projects-light{
-    @apply flex items-center gap-2 
-}
-
-
-
-.about-img-container{
-    @apply flex w-full justify-center items-center xl:row-span-3 xl:col-start-2 xl:row-start-1
-}
-
-.about-img{
-    @apply flex w-full justify-center items-center overflow-hidden rounded-full h-fit xl:w-96 xl:h-96
+.about-img {
+  @apply flex 
+  w-full  
+  overflow-hidden 
+  rounded-full 
+  h-fit xl:w-96 xl:h-96;
 }

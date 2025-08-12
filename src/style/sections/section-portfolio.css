@@ -1,161 +1,142 @@
-.portfolio-section-main{
-    @apply flex justify-center items-center flex-col lg:mx-32 md:mx-24 sm:mx-12 mx-6 my-68
+.portfolio-section-main {
+  @apply flex justify-center items-center flex-col mx-auto p-2 sm:p-10 rounded-4xl md:rounded-[96px] bg-gradient-to-b from-base-300 my-68;
 }
 
-.portfolio-header-container{
-    @apply flex h-full w-full justify-center items-center flex-col gap-4
+.portfolio-header-container {
+  @apply flex h-full w-full justify-center items-center flex-col gap-4;
 }
 
-.portfolio-header-main{
-    @apply sm:text-8xl text-5xl font-bold text-center
+.portfolio-header-main {
+  @apply sm:text-8xl text-5xl font-bold text-center;
 }
 
-.portfolio-header-text-container{
-    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-[var(--color-text-muted)]
+.portfolio-header-text-container {
+  @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-[var(--color-text-muted)];
 }
 
-.portfolio-container{
-    @apply mt-24 gap-8
+.portfolio-container {
+  @apply mt-24 gap-8;
 }
 
-.portfolio-navigation-container{
-    @apply bg-[var(--color-overlay-light-10)] h-32 rounded-xl shadow-lg flex justify-center items-center gap-4 p-4 sm:text-xl sm:font-bold
+.text-sparkle {
+  @apply w-4 h-4;
 }
-
-.portfolio-navigation-container.light{
-    @apply bg-[var(--color-overlay-dark-5)]
-}
-
-
-
-.portfolio-nav-button{
-    @apply rounded-lg flex-col focus:bg-white/20 cursor-pointer transition-colors duration-200
-}
-
-.portfolio-nav-button:active{
-    @apply bg-white/20
-}
-
-.portfolio-nav-button-light{
-    @apply rounded-lg flex-col focus:bg-white/20 cursor-pointer transition-colors duration-200
-}
-
-.portfolio-nav-button-light:focus{
-    @apply bg-black text-white transition-colors
-}
-
-
-
-.text-sparkle{
-    @apply w-4 h-4
-}
-
 
 /* certificate section */
-.certificate-grid{
-    @apply grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-8
+.certificate-grid {
+  @apply grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-8;
 }
 
-.certificate-container{
-    @apply flex h-full w-full bg-[var(--color-overlay-light-15)] rounded-lg
+.certificate-container {
+  @apply flex h-full w-full 
+  bg-gradient-to-b
+  from-neutral
+  to-base-100 
+  rounded-lg;
 }
 
-.certificate-container.light{
-    @apply bg-[var(--color-overlay-dark-5)] z-0
+.certificate-link {
+  @apply flex flex-col h-fit p-4 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2 rounded-xl;
 }
 
-.certificate-link{
-    @apply flex flex-col h-fit p-4 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2 rounded-xl
+.certificate-img {
+  @apply object-cover rounded-lg;
 }
-
-.certificate-img{
-    @apply object-cover rounded-lg
-}
-
-
-
 
 /* Projects section */
-.projects-grid{
-    @apply grid md:grid-cols-2 grid-cols-1 gap-4 mt-8
+.projects-grid {
+  @apply grid md:grid-cols-2 grid-cols-1 gap-4 mt-8;
 }
 
-.project-card-bg{
-    @apply flex flex-col bg-[var(--color-overlay-light-15)] rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 justify-between cursor-pointer
+.project-card-bg {
+  @apply flex flex-col 
+  rounded-lg 
+  bg-gradient-to-b
+  from-neutral
+  to-base-100
+  h-full
+  p-4 
+  shadow-lg 
+  hover:shadow-xl
+  transition-shadow 
+  duration-300 
+  justify-between 
+  cursor-pointer;
 }
 
-.project-card-bg.light{
-    @apply bg-[var(--color-overlay-dark-5)] z-0
+.project-card-img-container {
+  @apply aspect-video mb-4;
 }
 
-.project-card-img-container{
-    @apply aspect-video mb-4
+.project-card-img {
+  @apply object-cover rounded-lg transition-transform duration-200;
 }
 
-.project-card-img{
-    @apply object-cover rounded-lg transition-transform duration-200
+.project-card-title {
+  @apply text-xl font-semibold mb-2;
 }
 
-.project-card-title{
-    @apply text-xl font-semibold mb-2
+.project-card-description {
+  @apply text-gray-300 mb-4;
 }
 
-.project-card-description{
-    @apply text-gray-300 mb-4
+.project-card-buttons-container {
+  @apply flex justify-between items-center flex-col lg:flex-row gap-2;
 }
 
-.project-card-description.light{
-    @apply text-[var(--color-text-muted-light)] bg-transparent
+.project-card-button {
+  @apply flex p-4 py-2 rounded-lg justify-center items-center lg:w-fit w-full transition-transform;
 }
 
-.project-card-buttons-container{
-    @apply flex justify-between items-center flex-col lg:flex-row gap-2
+.project-card-button:hover {
+  @apply scale-105;
 }
 
-.project-card-button{
-    @apply flex p-4 py-2 rounded-lg bg-[var(--color-overlay-light-5)] justify-center items-center lg:w-fit w-full transition-transform
+.project-card-button:active {
+  @apply scale-95;
 }
-
-.project-card-button:hover{
-    @apply scale-105
+.project-card-button--demo {
+  @apply flex 
+  p-4 py-2 
+  rounded-lg 
+  justify-center 
+  items-center 
+  lg:w-34 
+  min-w-fit
+  gap-2 
+  border 
+  border-accent/85
+  text-accent/85
+  hover:scale-105 
+  hover:border-accent 
+  hover:text-accent 
+  active:hover:scale-95 
+  transition-transform;
 }
-
-.project-card-button:active{
-    @apply scale-95
-}
-
-.project-card-button.light{
-    @apply bg-black text-white z-0
-}
-
-.project-card-button--demo{
-    @apply flex p-4 py-2 rounded-lg justify-center items-center lg:w-34 w-full border border-[var(--color-border-gray)] hover:scale-105 active:hover:scale-95 transition-transform
-}
-
 
 /* Tech stack section */
-.techstack-grid{
-    @apply grid min-[60rem]:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8
+.techstack-grid {
+  @apply grid min-[60rem]:grid-cols-6 sm:grid-cols-4 grid-cols-3 gap-4 mt-8;
 }
 
-.techstack-container{
-    @apply flex flex-col w-full h-full bg-[var(--color-overlay-light-15)] rounded-lg p-2 shadow-lg hover:shadow-xl transition-all duration-300 justify-between hover:-translate-y-2
+.techstack-container {
+  @apply flex flex-col w-full h-full 
+    bg-gradient-to-b
+    from-neutral
+    to-base-100
+    rounded-lg p-2 
+    shadow-lg  
+    justify-between;
 }
 
-.techstack-container.light{
-    @apply bg-[var(--color-overlay-dark-5)] z-0
+.techstack-img-container {
+  @apply w-full;
 }
 
-
-.techstack-img-container{
-    @apply w-full
+.techstack-img {
+  @apply w-full h-full object-contain sm:p-4 p-2;
 }
 
-.techstack-img{
-    @apply w-full h-full object-contain sm:p-4 p-2
+.techstack-text {
+  @apply text-center mt-2 max-sm:text-sm;
 }
-
-.techstack-text{
-    @apply text-center mt-2 max-sm:text-sm
-}
-

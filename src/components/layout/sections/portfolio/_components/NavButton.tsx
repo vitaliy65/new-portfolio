@@ -1,6 +1,4 @@
 import type { LucideIcon } from "lucide-react";
-import { useAppSelector } from "../../../../../_hooks/hooks";
-
 interface NavButtonProps {
   icon: LucideIcon;
   label: string;
@@ -12,17 +10,8 @@ export default function NavButton({
   label,
   onClick,
 }: NavButtonProps) {
-  const theme = useAppSelector((s) => s.theme.theme);
-
   return (
-    <button
-      className={`full-center ${
-        theme === "light"
-          ? "portfolio-nav-button-light"
-          : "portfolio-nav-button"
-      }`}
-      onClick={onClick}
-    >
+    <button className={`full-center portfolio-nav-button`} onClick={onClick}>
       <Icon />
       {label}
     </button>

@@ -1,5 +1,3 @@
-import { useAppSelector } from "../../../_hooks/hooks";
-
 interface MainTextBannerProps {
   text: string;
   className?: string;
@@ -11,13 +9,8 @@ export default function MainTextBanner({
   className,
   img = "",
 }: MainTextBannerProps) {
-  const theme = useAppSelector((s) => s.theme.theme);
   return (
-    <button
-      className={`${className ? className : ""} badge ${
-        theme === "light" && "badge-light"
-      }`}
-    >
+    <button className={`${className ? className : ""} badge`}>
       {text}
       {img}
     </button>

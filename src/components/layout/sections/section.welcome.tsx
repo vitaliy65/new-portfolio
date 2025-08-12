@@ -1,14 +1,14 @@
 import TextGradient from "../../ui/Container-text-gradient";
 import Typewriter from "typewriter-effect";
 import MainTextBanner from "../main/MainTextBanner";
-import ContainerGlow from "../../ui/Container-glow";
 import { ExternalLink, Contact, Github, Linkedin } from "lucide-react";
 import AnimatedIcon from "../../animations/AnimatedIcon";
 import Telegram from "../../../assets/component/Telegram";
-import Computer from "../../three/Computer";
 import AnimatedContainer from "../../animations/AnimatedContainer";
 import { Directions } from "../../animations/types";
 import { useAppSelector } from "../../../_hooks/hooks";
+import CodeMockup from "./welcome/CodeMockup";
+import BorderBlick from "../../background/borderBlick";
 
 export default function WelcomeSection() {
   const theme = useAppSelector((s) => s.theme.theme);
@@ -22,8 +22,8 @@ export default function WelcomeSection() {
             <p>Frontend</p>
             <TextGradient
               text="Developer"
-              from="from-purple-800"
-              to="to-blue-800"
+              from="from-accent"
+              to="to-accent/10"
             />
           </div>
         </AnimatedContainer>
@@ -53,41 +53,47 @@ export default function WelcomeSection() {
 
         <AnimatedContainer delay={0.9} direction={Directions.DOWN}>
           <div className="welcome-section-buttons-container">
-            <ContainerGlow
-              glowColor={`${
-                theme === "light" ? "shadow-black" : "shadow-indigo-800"
-              }`}
-              className="welcome-section-button-container"
-            >
-              <a
-                href="https://github.com/vitaliy65"
-                target="_blank"
-                className="welcome-section-button full-center"
-              >
-                Projects
-                <ExternalLink size={20} />
-              </a>
-            </ContainerGlow>
-            <ContainerGlow
-              glowColor={`${
-                theme === "light" ? "shadow-black" : "shadow-indigo-800"
-              }`}
-              className="welcome-section-button-container"
-            >
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="welcome-section-button full-center"
-              >
-                Contact
-                <Contact size={20} />
-              </a>
-            </ContainerGlow>
+            <BorderBlick className="w-full rounded-xl">
+              <div className="welcome-section-button-container">
+                <a
+                  href="https://github.com/vitaliy65"
+                  target="_blank"
+                  className="welcome-section-button full-center f-aurora"
+                >
+                  <span className="f-aurora__content">
+                    Projects
+                    <ExternalLink size={20} />
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="f-aurora__background"
+                  ></span>
+                </a>
+              </div>
+            </BorderBlick>
+            <BorderBlick className="w-full rounded-xl">
+              <div className="welcome-section-button-container">
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="welcome-section-button full-center  f-aurora"
+                >
+                  <span className="f-aurora__content">
+                    Contact
+                    <Contact size={20} />
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="f-aurora__background"
+                  ></span>
+                </a>
+              </div>
+            </BorderBlick>
           </div>
         </AnimatedContainer>
 
@@ -99,7 +105,7 @@ export default function WelcomeSection() {
                 delay={0}
                 paddingImg="sm:p-4 p-2"
                 className="link-box"
-                color={`link-color ${theme === "light" ? "light" : ""}`}
+                color={`link-color`}
               />
             </a>
             <a
@@ -111,7 +117,7 @@ export default function WelcomeSection() {
                 delay={0}
                 paddingImg="sm:p-4 p-2"
                 className="link-box"
-                color={`link-color ${theme === "light" ? "light" : ""}`}
+                color={`link-color`}
               />
             </a>
             <a href="https://t.me/Vitalas_P" target="_blank">
@@ -120,7 +126,7 @@ export default function WelcomeSection() {
                 delay={0}
                 paddingImg="sm:p-4 p-2"
                 className="link-box"
-                color={`link-color ${theme === "light" ? "light" : ""}`}
+                color={`link-color`}
               />
             </a>
           </div>
@@ -130,11 +136,11 @@ export default function WelcomeSection() {
       {/* right side */}
       <div className="welcome-section-right-side">
         <AnimatedContainer
-          className="computer-container"
+          className="code-container"
           delay={0.6}
           direction={Directions.RIGHT}
         >
-          <Computer />
+          <CodeMockup />
         </AnimatedContainer>
       </div>
     </section>

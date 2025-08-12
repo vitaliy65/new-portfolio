@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import HeaderThemeButton from "./header/HeaderThemeButton";
-import { useAppSelector } from "../../_hooks/hooks";
 import HeaderSideButton from "./header/header.side.button";
 
 export default function Header() {
@@ -12,7 +11,6 @@ export default function Header() {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  const theme = useAppSelector((s) => s.theme.theme);
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,15 +44,12 @@ export default function Header() {
             <HeaderButton text="About" href="#about" />
             <HeaderButton text="Portfolio" href="#portfolio" />
             <HeaderButton text="Contact" href="#contact" />
-            <HeaderThemeButton />
           </div>
         ) : (
           <>
             <div className={`menu-button-border ${open ? "opened" : ""}`}>
               <motion.button
-                className={`header-side-menu-button ${
-                  theme == "light" ? "light" : ""
-                } ${open ? "opened" : ""}`}
+                className={`header-side-menu-button ${open ? "opened" : ""}`}
                 onClick={toggleMenu}
                 exit={{ rotate: 90 }}
                 transition={{

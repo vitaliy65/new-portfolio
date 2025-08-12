@@ -1,0 +1,66 @@
+.f-aurora {
+  --aurora--opacity: 100%;
+  --aurora--color--1: var(--a--color--accent, #80d6f8);
+  --aurora--color--2: var(--a--color--accent2, #139dd3);
+  --a--transition--timing-function: ease-in-out;
+  --a--transition--duration--double: 2s;
+  --a--layer--3: 30;
+  --aurora--blur: 25px;
+  --aurora--inset: 1;
+  --a--layer--2: 20;
+  --f--filter--blur--xl: 30px;
+  --aurora--animation-duration: 6s;
+  --aurora--angle: 5deg;
+  --aurora--size: 2em;
+}
+
+.f-aurora__content {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: inherit;
+  align-items: inherit;
+  gap: inherit;
+  z-index: var(--a--layer--3);
+  isolation: isolate;
+}
+
+.f-aurora__background {
+  @apply w-full h-full absolute overflow-hidden;
+  inset: var(--aurora--inset, 0);
+  z-index: var(--a--layer--2);
+  opacity: var(--aurora--opacity, 40%);
+  filter: blur(var(--aurora--blur, var(--f--filter--blur--xl)));
+  transition: opacity var(--a--transition--duration--double)
+    var(--a--transition--timing-function) 0s;
+}
+
+.f-aurora__background::before {
+  @apply top-0 left-0 w-full h-[400%] will-change-transform absolute;
+  content: "";
+  transform: translate3d(0, 25%, 0);
+  backface-visibility: hidden;
+  background-image: linear-gradient(
+    calc(var(--aurora--angle, 12deg) * -1),
+    transparent 0,
+    transparent calc(var(--aurora--size, 2em) * 2),
+    var(--aurora--color--1) calc(var(--aurora--size, 2em) * 2),
+    var(--aurora--color--1) calc(var(--aurora--size, 2em) * 3),
+    transparent calc(var(--aurora--size, 2em) * 3),
+    transparent calc(var(--aurora--size, 2em) * 5),
+    var(--aurora--color--2) calc(var(--aurora--size, 2em) * 5),
+    var(--aurora--color--2) calc(var(--aurora--size, 2em) * 6),
+    transparent calc(var(--aurora--size, 2em) * 6),
+    transparent calc(var(--aurora--size, 2em) * 9)
+  );
+  animation: auroraMove var(--aurora--animation-duration, 8s) linear infinite;
+}
+
+@keyframes auroraMove {
+  0% {
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(-110%);
+  }
+}

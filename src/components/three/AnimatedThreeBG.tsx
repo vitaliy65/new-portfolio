@@ -44,7 +44,7 @@ export default function AnimatedThreeBG() {
   }, []);
 
   return (
-    <div className="bg-[url(/bg/InitialLoadBG.webp)] blur-3xl full -z-10 left-0 top-0 fixed">
+    <div className="blur-3xl full -z-10 left-0 top-0 fixed">
       <Canvas orthographic camera={{ position: [0, 0, 10], zoom: 50 }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[0, 0, 10]} intensity={1} />

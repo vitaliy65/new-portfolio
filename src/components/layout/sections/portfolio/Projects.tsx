@@ -5,6 +5,7 @@ import AnimatedContainer from "../../../animations/AnimatedContainer";
 import { Directions } from "../../../animations/types";
 import { useAppSelector } from "../../../../_hooks/hooks";
 import LazyImage from "../../../ui/LazyImage";
+import BorderBlick from "../../../background/borderBlick";
 
 export default function ProjectsSection() {
   const [isHovered, setIsHovered] = useState<{
@@ -25,63 +26,65 @@ export default function ProjectsSection() {
           key={index}
           className="flex full"
         >
-          <div
-            onClick={() =>
-              window.open(project.link, "_blank", "noopener,noreferrer")
-            }
-            className={`project-card-bg ${theme === "light" ? "light" : ""}`}
-            onMouseEnter={() => setIsHovered({ isHovered: true, index })}
-            onMouseLeave={() => setIsHovered({ isHovered: false, index })}
-          >
-            <div>
-              <div className="project-card-img-container">
-                <LazyImage
-                  src={project.image}
-                  alt={project.title}
-                  className={`full project-card-img ${
-                    isHovered.isHovered &&
-                    isHovered.index === index &&
-                    "scale-102"
-                  }`}
-                />
+          <BorderBlick className="rounded-lg">
+            <div
+              onClick={() =>
+                window.open(project.link, "_blank", "noopener,noreferrer")
+              }
+              className={`project-card-bg f-border`}
+              onMouseEnter={() => setIsHovered({ isHovered: true, index })}
+              onMouseLeave={() => setIsHovered({ isHovered: false, index })}
+            >
+              <div>
+                <div className="project-card-img-container">
+                  <LazyImage
+                    src={project.image}
+                    alt={project.title}
+                    className={`full project-card-img ${
+                      isHovered.isHovered &&
+                      isHovered.index === index &&
+                      "scale-102"
+                    }`}
+                  />
+                </div>
+
+                <div>
+                  <h3 className="project-card-title">{project.title}</h3>
+                  <p
+                    className={`project-card-description ${
+                      theme === "light" ? "light" : ""
+                    }`}
+                  >
+                    {project.description}
+                  </p>
+                </div>
               </div>
 
-              <div>
-                <h3 className="project-card-title">{project.title}</h3>
-                <p
-                  className={`project-card-description ${
+              <div className="project-card-buttons-container">
+                <a
+                  className="project-card-button--demo"
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Live Demo <ExternalLink />
+                </a>
+                <a
+                  className={`project-card-button ${
                     theme === "light" ? "light" : ""
                   }`}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  {project.description}
-                </p>
+                  Source Code
+                  <ArrowRight />
+                </a>
               </div>
             </div>
-
-            <div className="project-card-buttons-container">
-              <a
-                className="project-card-button--demo"
-                href={project.liveDemo}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-              >
-                Live Demo <ExternalLink />
-              </a>
-              <a
-                className={`project-card-button ${
-                  theme === "light" ? "light" : ""
-                }`}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-              >
-                Source Code
-                <ArrowRight />
-              </a>
-            </div>
-          </div>
+          </BorderBlick>
         </AnimatedContainer>
       ))}
     </section>

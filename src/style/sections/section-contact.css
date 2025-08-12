@@ -1,100 +1,86 @@
 @import "tailwindcss";
 
-.contact-section-main{
-    @apply flex justify-center items-center flex-col lg:mx-32 md:mx-24 sm:mx-12 mx-6 mt-68 mb-24
+.contact-section-main {
+  @apply flex justify-center items-center flex-col mx-auto p-2 sm:p-10 rounded-4xl md:rounded-[96px] bg-gradient-to-b from-base-300 mt-68 mb-24;
 }
 
-.contact-header-main-container{
-    @apply flex justify-center items-center h-full w-full flex-col gap-4
+.contact-header-main-container {
+  @apply flex justify-center items-center h-full w-full flex-col gap-4;
 }
 
-.contact-header-main-text{
-    @apply sm:text-8xl text-6xl font-bold
+.contact-header-main-text {
+  @apply sm:text-8xl text-6xl font-bold;
 }
 
-.contact-header-text-container{
-    @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-[var(--color-text-muted)]
+.contact-header-text-container {
+  @apply flex justify-center items-center lg:text-xl sm:text-base text-xs text-[var(--color-text-muted)];
 }
 
-
-
-.contact-container{
-    @apply h-full w-full mt-24 p-6 gap-8 bg-[var(--color-overlay-light-15)] max-w-2xl rounded-xl
+.contact-container {
+  @apply h-full w-full p-6 gap-8 bg-linear-to-b from-neutral to-base-100 max-w-2xl rounded-xl;
 }
 
-.contact-container.light{
-    @apply flex flex-col bg-[var(--color-overlay-dark-5)] z-0
+.contact-title-container {
+  @apply h-full w-full flex flex-row gap-4 mb-8;
 }
 
-
-.contact-title-container{
-    @apply h-full w-full flex flex-row gap-4 mb-8
+.contact-title {
+  @apply sm:text-6xl text-4xl font-bold mb-2;
 }
 
-.contact-title{
-    @apply sm:text-6xl text-4xl font-bold mb-2
+.contact-description {
+  @apply text-[var(--color-text-muted)];
 }
 
-.contact-description{
-    @apply text-[var(--color-text-muted)]
+.contact-form-container {
+  @apply flex flex-col gap-4;
 }
 
-
-.contact-form-container{
-    @apply flex flex-col gap-4
+.contact-form-icon {
+  @apply absolute left-2 top-3 w-8 h-8 text-[var(--color-text-stone)];
 }
 
-.contact-form-icon{
-    @apply absolute left-2 top-3 w-8 h-8 text-[var(--color-text-stone)]
+.contact-input-field {
+  @apply p-4 pl-12 bg-[var(--color-overlay-light-10)] rounded-lg border border-[var(--color-border-gray)] focus:outline-none focus:ring-2 focus:ring-[var(--color-focus-blue)] w-full;
 }
 
-.contact-input-field{
-    @apply p-4 pl-12 bg-[var(--color-overlay-light-10)] rounded-lg border border-[var(--color-border-gray)] focus:outline-none focus:ring-2 focus:ring-[var(--color-focus-blue)] w-full
+.contact-input-message {
+  @apply p-4 pl-12 bg-[var(--color-overlay-light-10)] rounded-lg border border-[var(--color-border-gray)] focus:outline-none focus:ring-2 focus:ring-[var(--color-focus-blue)] h-32 w-full;
 }
 
-.contact-input-message{
-    @apply p-4 pl-12 bg-[var(--color-overlay-light-10)] rounded-lg border border-[var(--color-border-gray)] focus:outline-none focus:ring-2 focus:ring-[var(--color-focus-blue)] h-32 w-full
+.contact-submit-button {
+  @apply p-4 bg-[var(--color-button-blue)] text-white rounded-lg hover:bg-[var(--color-button-blue-hover)] 
+    transition-all duration-200 hover:scale-102 flex justify-center items-center h-full w-full text-lg font-semibold active:scale-97 gap-2;
 }
 
-.contact-submit-button{
-    @apply p-4 bg-[var(--color-button-blue)] text-white rounded-lg hover:bg-[var(--color-button-blue-hover)] 
-    transition-all duration-200 hover:scale-102 flex justify-center items-center h-full w-full text-lg font-semibold active:scale-97 gap-2
+.contact-error-lable {
+  @apply text-error text-sm mb-2;
 }
 
-.contact-error-lable{
-    @apply text-[var(--color-error-red)] text-sm mb-2
+.contact-under-form-container {
+  @apply flex flex-col gap-4 mt-8;
 }
 
-
-
-.contact-under-form-container{
-    @apply flex flex-col gap-4 mt-8
+.contact-under-from-title {
+  @apply flex items-center justify-start gap-2;
 }
 
-.contact-under-from-title{
-    @apply flex items-center justify-start gap-2
+.break-line {
+  @apply w-12 h-0 border-2 border-[var(--color-accent-indigo)];
 }
 
-.break-line{
-    @apply w-12 h-0 border-2 border-[var(--color-accent-indigo)]
+.contact-link-grid {
+  @apply grid sm:grid-rows-2 grid-rows-4 sm:grid-cols-2 grid-cols-1 gap-4;
 }
 
-.contact-link-grid{
-    @apply grid sm:grid-rows-2 grid-rows-4 sm:grid-cols-2 grid-cols-1 gap-4
+.contact-link-bg {
+  @apply flex items-center gap-4 bg-neutral p-4 sm:p-6 rounded-xl;
 }
 
-.contact-link-bg{
-    @apply flex items-center gap-4 bg-[var(--color-overlay-light-15)] p-4 sm:p-6 rounded-xl
+.contact-link-img {
+  @apply w-12 h-12 object-contain transition-all duration-200;
 }
 
-.contact-link-bg.light{
-    @apply bg-black text-white z-0
-}
-
-.contact-link-img{
-    @apply w-12 h-12 object-contain transition-all duration-200
-}
-
-.contact-link-tag{
-    @apply text-[var(--color-text-stone)]
+.contact-link-tag {
+  @apply text-[var(--color-text-stone)];
 }

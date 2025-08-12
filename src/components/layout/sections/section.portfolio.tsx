@@ -23,8 +23,8 @@ export default function PortfolioSection() {
         <AnimatedContainer direction={Directions.ZOOMIN} delay={0.1}>
           <TextGradient
             text="Portfolio Showcase"
-            from="from-purple-800"
-            to="to-blue-800"
+            from="from-accent"
+            to="to-accent/30"
             className="portfolio-header-main"
           />
         </AnimatedContainer>
@@ -43,36 +43,34 @@ export default function PortfolioSection() {
       {/* second */}
       <div className="portfolio-container full">
         {/* select case buttons */}
-        <div
-          className={`portfolio-navigation-container ${
-            theme === "light" && "light"
-          }`}
-        >
-          <NavButton
-            icon={CodeIcon}
-            label="Projects"
-            onClick={() => setActiveSection("projects")}
-          />
-          <NavButton
-            icon={FileArchive}
-            label="Certificates"
-            onClick={() => setActiveSection("certificates")}
-          />
-          <NavButton
-            icon={BrainCircuit}
-            label="Tech Stack"
-            onClick={() => setActiveSection("techstack")}
-          />
-        </div>
-
-        {/* showcase section */}
-        <AnimatePresence>
-          <div>
-            {activeSection === "projects" && <ProjectsSection />}
-            {activeSection === "certificates" && <CertificateSection />}
-            {activeSection === "techstack" && <TechStackSection />}
+        <div className="tabs tabs-lift ">
+          <label className="tab [--tab-bg:#1e293b]">
+            <input type="radio" name="my_tabs_1" defaultChecked />
+            <CodeIcon />
+            Projects
+          </label>
+          <div className="tab-content bg-neutral border-base-300 p-6">
+            <ProjectsSection />
           </div>
-        </AnimatePresence>
+
+          <label className="tab [--tab-bg:#1e293b]">
+            <input type="radio" name="my_tabs_1" />
+            <FileArchive />
+            Certificates
+          </label>
+          <div className="tab-content bg-neutral border-base-300 p-6">
+            <CertificateSection />
+          </div>
+
+          <label className="tab [--tab-bg:#1e293b]">
+            <input type="radio" name="my_tabs_1" />
+            <BrainCircuit />
+            Tech Stack
+          </label>
+          <div className="tab-content bg-neutral border-base-300 p-6">
+            <TechStackSection />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Directions } from "../../../animations/types";
 import { useAppSelector } from "../../../../_hooks/hooks";
 import LazyImage from "../../../ui/LazyImage";
+import BorderBlick from "../../../background/borderBlick";
 
 export default function TechStackSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
@@ -48,19 +49,18 @@ export default function TechStackSection() {
             key={index}
             className="flex full"
           >
-            <div
-              key={index}
-              className={`techstack-container ${theme === "light" && "light"}`}
-            >
-              <div className="techstack-img-container">
-                <LazyImage
-                  src={ts.img}
-                  alt={ts.name}
-                  className="techstack-img"
-                />
+            <BorderBlick className="rounded-lg hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+              <div key={index} className={`techstack-container`}>
+                <div className="techstack-img-container">
+                  <LazyImage
+                    src={ts.img}
+                    alt={ts.name}
+                    className="techstack-img"
+                  />
+                </div>
+                <p className="techstack-text">{ts.name}</p>
               </div>
-              <p className="techstack-text">{ts.name}</p>
-            </div>
+            </BorderBlick>
           </AnimatedContainer>
         );
       })}

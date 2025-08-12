@@ -1,10 +1,10 @@
 import TextGradient from "../../ui/Container-text-gradient";
 import ContainerGlow from "../../ui/Container-glow";
 import AnimatedContainer from "../../animations/AnimatedContainer";
-import { Code, File, Sparkle } from "lucide-react";
-import ContainerGradient from "../../ui/Container-gradient";
+import { File, Sparkle } from "lucide-react";
 import { Directions } from "../../animations/types";
 import { useAppSelector } from "../../../_hooks/hooks";
+import { InteractiveHoverButton } from "./aboutMe/InteractiveHoverButton";
 
 export default function AboutMeSection() {
   const theme = useAppSelector((s) => s.theme.theme);
@@ -16,8 +16,8 @@ export default function AboutMeSection() {
         <AnimatedContainer direction={Directions.ZOOMIN} delay={0.1}>
           <TextGradient
             text="About Me"
-            from="from-purple-800"
-            to="to-blue-800"
+            from="from-accent"
+            to="to-accent/50"
             className="about-header-main-text"
           />
         </AnimatedContainer>
@@ -40,17 +40,13 @@ export default function AboutMeSection() {
           <AnimatedContainer direction={Directions.LEFT} delay={0.1}>
             <TextGradient
               text="Hello, I'm"
-              from="from-purple-800"
-              to="to-blue-800"
+              from="from-accent"
+              to="to-accent/10"
             />
           </AnimatedContainer>
           <AnimatedContainer direction={Directions.LEFT} delay={0.2}>
             <p>Posvistak Vitaliy</p>
           </AnimatedContainer>
-        </div>
-
-        {/* about me text */}
-        <div className="about-description-container">
           <AnimatedContainer direction={Directions.LEFT} delay={0.4}>
             <p
               className={`${
@@ -65,27 +61,22 @@ export default function AboutMeSection() {
               best solution in every project.
             </p>
           </AnimatedContainer>
+        </div>
+
+        {/* buttons */}
+        <div className="about-description-container">
           <AnimatedContainer direction={Directions.LEFT} delay={0.2}>
             <div className="about-buttons-container">
               <a
-                className="full-center"
+                className="button-cv full-center"
                 href="/CV - Vitaliy Posvistak.pdf"
                 download="CV - Vitaliy Posvistak.pdf"
               >
-                <ContainerGradient
-                  className="button-cv"
-                  direction="bottom-right"
-                  from="button-cv-gradient-from"
-                  to="button-cv-gradient-to"
-                  isButton={true}
-                >
-                  <div className="flex items-center gap-2">
-                    <File /> Download CV
-                  </div>
-                </ContainerGradient>
+                <div className="flex items-center gap-2 z-20">
+                  <File /> Download CV
+                </div>
               </a>
-              <a
-                href="#portfolio"
+              <InteractiveHoverButton
                 onClick={(e) => {
                   e.preventDefault();
                   const portfolioSection = document.getElementById("portfolio");
@@ -93,42 +84,28 @@ export default function AboutMeSection() {
                     portfolioSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className={`${
-                  theme === "light"
-                    ? "button-to-projects-light"
-                    : "button-to-projects"
-                }`}
-              >
-                <span
-                  className={`${
-                    theme === "light"
-                      ? "button-projects-light"
-                      : "button-projects"
-                  }`}
-                >
-                  <Code /> View Projects
-                </span>
-              </a>
+              />
             </div>
           </AnimatedContainer>
         </div>
 
         {/* my img */}
         <div className="about-img-container">
-          <AnimatedContainer direction={Directions.DOWN}>
+          <AnimatedContainer
+            direction={Directions.DOWN}
+            className="grid h-fit justify-self-center"
+          >
             <ContainerGlow
-              glowColor={`${
-                theme === "light" ? "shadow-black" : "shadow-purple-800"
-              }`}
+              glowColor={`shadow-primary`}
               size="32px"
               className="about-img"
             >
               <img
-              src="/me.jpg"
-              alt="Vitaliy Posvistak - Front-end Developer and UI Designer professional headshot"
-              className="object-cover h-full"
-              width={512}
-              height={512}
+                src="/me.jpg"
+                alt="Vitaliy Posvistak - Front-end Developer and UI Designer professional headshot"
+                className="object-cover h-full"
+                width={512}
+                height={512}
               />
             </ContainerGlow>
           </AnimatedContainer>

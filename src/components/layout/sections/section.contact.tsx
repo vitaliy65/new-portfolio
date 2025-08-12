@@ -15,6 +15,7 @@ import { ToastContainer, toast } from "react-toastify";
 import AnimatedContainer from "../../animations/AnimatedContainer";
 import { Directions } from "../../animations/types";
 import { useAppSelector } from "../../../_hooks/hooks";
+import BorderBlick from "../../background/borderBlick";
 
 interface FormErrors {
   name: string;
@@ -87,8 +88,8 @@ export default function ContactSection() {
         <AnimatedContainer direction={Directions.ZOOMIN} delay={0.1}>
           <TextGradient
             text="Contact Me"
-            from="from-purple-800"
-            to="to-blue-800"
+            from="from-accent"
+            to="to-accent/30"
             className="contact-header-main-text"
           />
         </AnimatedContainer>
@@ -104,158 +105,163 @@ export default function ContactSection() {
       </div>
 
       {/* second */}
-      <AnimatedContainer direction={Directions.LEFT}>
-        <div className={`contact-container ${theme === "light" && "light"}`}>
-          <div className="contact-title-container">
-            <div>
-              <TextGradient
-                text="Get In Touch"
-                from="from-purple-800"
-                to="to-blue-800"
-                className="contact-title"
-              />
-              <p className="contact-description">
-                Have something to discuss? Send me a message, and I'll get back
-                to you as soon as possible.
-              </p>
-            </div>
-            <Contact className="w-12 h-12 text-gray-500" />
-          </div>
-          <form onSubmit={handleSubmit} className="full flex flex-col gap-8">
-            {/* name */}
-            <div className="contact-form-container">
-              <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
-                <div>
-                  <div className="relative">
-                    <User className="contact-form-icon" />
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      id="name"
-                      name="name"
-                      value={formFields.name}
-                      onChange={(e) =>
-                        setFormFields({ ...formFields, name: e.target.value })
-                      }
-                      className="contact-input-field"
-                    />
-                  </div>
-                  <label className="contact-error-lable" htmlFor="name">
-                    {errors.name}
-                  </label>
-                </div>
-              </AnimatedContainer>
-
-              {/* email */}
-              <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
-                <div>
-                  <div className="relative">
-                    <Mail className="contact-form-icon" />
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      id="email"
-                      name="email"
-                      value={formFields.email}
-                      onChange={(e) =>
-                        setFormFields({ ...formFields, email: e.target.value })
-                      }
-                      className="contact-input-field"
-                    />
-                  </div>
-                  <label className="contact-error-lable" htmlFor="email">
-                    {errors.email}
-                  </label>
-                </div>
-              </AnimatedContainer>
-
-              {/* message */}
-              <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
-                <div>
-                  <div className="relative">
-                    <MessageCircleHeartIcon className="contact-form-icon" />
-                    <textarea
-                      placeholder="Your Message"
-                      id="message"
-                      name="message"
-                      value={formFields.message}
-                      onChange={(e) =>
-                        setFormFields({
-                          ...formFields,
-                          message: e.target.value,
-                        })
-                      }
-                      className="contact-input-message"
-                    ></textarea>
-                  </div>
-                  <label className="contact-error-lable" htmlFor="message">
-                    {errors.message}
-                  </label>
-                </div>
-              </AnimatedContainer>
-            </div>
-
-            {/* submit button */}
-            <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
-              <ContainerGradient
-                isButton={true}
-                isInForm={true}
-                from="from-purple-800"
-                to="to-blue-800"
-                className="contact-submit-button"
-              >
-                <Send /> Send Message
-              </ContainerGradient>
-            </AnimatedContainer>
-          </form>
-          <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
-            <div className="contact-under-form-container">
-              <p className="contact-under-from-title">
-                <span className="break-line"></span>
-                Connect With Me
-              </p>
-
-              <div className="contact-link-grid">
-                {socials.map((social, index) => (
-                  <a
-                    key={index}
-                    onMouseEnter={() => setSelectedSocial(index)}
-                    onMouseLeave={() => setSelectedSocial(-1)}
-                    className={`contact-link-bg ${
-                      theme === "light" && "light"
-                    }`}
-                    href={social.canBeCopied ? `#` : social.link}
-                    target={!social.canBeCopied ? "_blank" : undefined}
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      if (social.canBeCopied) {
-                        e.preventDefault();
-                        navigator.clipboard.writeText(social.myTag);
-                        toast.success("Copied to clipboard!", {
-                          position: "top-right",
-                          autoClose: 1500,
-                          theme: "dark",
-                        });
-                      }
-                    }}
-                  >
-                    <img
-                      src={social.img}
-                      alt={social.alt}
-                      className={`contact-link-img ${
-                        selectedSocial === index ? "scale-150" : ""
-                      }`}
-                    />
-                    <div>
-                      <p>{social.name}</p>
-                      <p className="contact-link-tag">{social.myTag}</p>
-                    </div>
-                  </a>
-                ))}
+      <AnimatedContainer className="mt-24 " direction={Directions.LEFT}>
+        <BorderBlick className="rounded-xl">
+          <div className={`contact-container`}>
+            <div className="contact-title-container">
+              <div>
+                <TextGradient
+                  text="Get In Touch"
+                  from="from-accent"
+                  to="to-accent/30"
+                  className="contact-title"
+                />
+                <p className="contact-description">
+                  Have something to discuss? Send me a message, and I'll get
+                  back to you as soon as possible.
+                </p>
               </div>
+              <Contact className="w-12 h-12 text-gray-500" />
             </div>
-          </AnimatedContainer>
-        </div>
+            <form onSubmit={handleSubmit} className="full flex flex-col gap-8">
+              {/* name */}
+              <div className="contact-form-container">
+                <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
+                  <div>
+                    <div className="relative">
+                      <User className="contact-form-icon" />
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        id="name"
+                        name="name"
+                        value={formFields.name}
+                        onChange={(e) =>
+                          setFormFields({ ...formFields, name: e.target.value })
+                        }
+                        className="contact-input-field"
+                      />
+                    </div>
+                    <label className="contact-error-lable" htmlFor="name">
+                      {errors.name}
+                    </label>
+                  </div>
+                </AnimatedContainer>
+
+                {/* email */}
+                <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
+                  <div>
+                    <div className="relative">
+                      <Mail className="contact-form-icon" />
+                      <input
+                        type="email"
+                        placeholder="Your Email"
+                        id="email"
+                        name="email"
+                        value={formFields.email}
+                        onChange={(e) =>
+                          setFormFields({
+                            ...formFields,
+                            email: e.target.value,
+                          })
+                        }
+                        className="contact-input-field"
+                      />
+                    </div>
+                    <label className="contact-error-lable" htmlFor="email">
+                      {errors.email}
+                    </label>
+                  </div>
+                </AnimatedContainer>
+
+                {/* message */}
+                <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
+                  <div>
+                    <div className="relative">
+                      <MessageCircleHeartIcon className="contact-form-icon" />
+                      <textarea
+                        placeholder="Your Message"
+                        id="message"
+                        name="message"
+                        value={formFields.message}
+                        onChange={(e) =>
+                          setFormFields({
+                            ...formFields,
+                            message: e.target.value,
+                          })
+                        }
+                        className="contact-input-message"
+                      ></textarea>
+                    </div>
+                    <label className="contact-error-lable" htmlFor="message">
+                      {errors.message}
+                    </label>
+                  </div>
+                </AnimatedContainer>
+              </div>
+
+              {/* submit button */}
+              <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
+                <ContainerGradient
+                  isButton={true}
+                  isInForm={true}
+                  from="from-purple-800"
+                  to="to-blue-800"
+                  className="contact-submit-button"
+                >
+                  <Send /> Send Message
+                </ContainerGradient>
+              </AnimatedContainer>
+            </form>
+            <AnimatedContainer direction={Directions.DOWN} delay={0.1}>
+              <div className="contact-under-form-container">
+                <p className="contact-under-from-title">
+                  <span className="break-line"></span>
+                  Connect With Me
+                </p>
+
+                <div className="contact-link-grid">
+                  {socials.map((social, index) => (
+                    <a
+                      key={index}
+                      onMouseEnter={() => setSelectedSocial(index)}
+                      onMouseLeave={() => setSelectedSocial(-1)}
+                      className={`contact-link-bg ${
+                        theme === "light" && "light"
+                      }`}
+                      href={social.canBeCopied ? `#` : social.link}
+                      target={!social.canBeCopied ? "_blank" : undefined}
+                      rel="noopener noreferrer"
+                      onClick={(e) => {
+                        if (social.canBeCopied) {
+                          e.preventDefault();
+                          navigator.clipboard.writeText(social.myTag);
+                          toast.success("Copied to clipboard!", {
+                            position: "top-right",
+                            autoClose: 1500,
+                            theme: "dark",
+                          });
+                        }
+                      }}
+                    >
+                      <img
+                        src={social.img}
+                        alt={social.alt}
+                        className={`contact-link-img ${
+                          selectedSocial === index ? "scale-150" : ""
+                        }`}
+                      />
+                      <div>
+                        <p>{social.name}</p>
+                        <p className="contact-link-tag">{social.myTag}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </AnimatedContainer>
+          </div>
+        </BorderBlick>
       </AnimatedContainer>
 
       {/* toast container */}

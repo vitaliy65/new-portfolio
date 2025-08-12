@@ -9,16 +9,12 @@ export default function MainLayout() {
     <>
       <Header />
 
-      {/* welcoming section */}
       <WelcomeSection />
 
-      {/* about section */}
       <AboutMeSection />
 
-      {/* portfolio section */}
       <PortfolioSection />
 
-      {/* contact section */}
       <ContactSection />
     </>
   );

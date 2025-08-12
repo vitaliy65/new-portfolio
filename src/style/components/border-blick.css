@@ -1,0 +1,12 @@
+.f-border {
+  --border--opacity: 1;
+  --a--border--width--1: 1px;
+  --border--width: var(--a--border--width--1);
+  --border--angle: 165deg;
+  --a--color-rgb: #ffffff;
+  --border--color--start: rgba(var(--a--color-rgb), 16%);
+  --border--color--end: rgba(var(--a--color-rgb), 0%);
+  --border--mask: linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  isolation: isolate;
+}

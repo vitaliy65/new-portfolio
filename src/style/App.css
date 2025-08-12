@@ -1,43 +1,43 @@
 @import "tailwindcss";
-@import "./components/theme.css";
+@plugin "daisyui" {
+  themes: light --default, night --prefersdark;
+}
 @import "./components/header.css";
 @import "./sections/section-welcome.css";
 @import "./sections/section-portfolio.css";
 @import "./sections/section-about.css";
 @import "./sections/section-contact.css";
-@import "./sections/section-loading.css";
+@import "./components/aurora.css";
+@import "./components/border-blick.css";
 
-#root{
-  @apply min-h-screen w-full;
-  scroll-behavior: smooth;
+@utility tabs {
+  @apply justify-center items-center p-4;
 }
 
-@theme {  
-  --shadow-3xl: 0 0 24px; 
-  --ring-blur: var(--tw-ring-inset) 0 0 1.5px calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  
-  /* Color Variables */
-  --color-primary-dark: #08002a;
-  --color-surface-dark: #09090b;
-  --color-background-light: #f9f8f6;
-  --color-overlay-light-15: rgba(255, 255, 255, 0.15);
-  --color-overlay-light-10: rgba(255, 255, 255, 0.10);
-  --color-overlay-light-5: rgba(255, 255, 255, 0.05);
-  --color-overlay-dark-5: rgba(0, 0, 0, 0.05);
-  --color-overlay-dark-20: rgba(0, 0, 0, 0.20);
-  --color-accent-blue: #1e40af;
-  --color-accent-purple: #6b21a8;
-  --color-shadow-purple-primary: #6b21a8;
-  --color-shadow-purple-hover: #9333ea;
-  --color-text-muted: #6b7280;
-  --color-text-muted-light: #374151;
-  --color-border-gray: #6b7280;
-  --color-focus-blue: #3b82f6;
-  --color-button-blue: #2563eb;
-  --color-button-blue-hover: #1d4ed8;
-  --color-error-red: #ef4444;
-  --color-accent-indigo: #6366f1;
-  --color-text-stone: #a8a29e;
+@utility tab {
+  @apply flex flex-col h-32 w-1/3  sm:text-xl sm:font-bold;
+}
+
+@layer utilities {
+  /* 1. Останній tab — прибрати праве закруглення у before */
+  .tabs-lift
+    > .tab:last-of-type:is(.tab-active, [aria-selected="true"]):not(
+      .tab-disabled,
+      [disabled]
+    ),
+  .tabs-lift > .tab:last-of-type:is(input:checked, label:has(:checked)) {
+    &::before {
+      background-image: var(--radius-start); /* тільки ліве закруглення */
+    }
+  }
+
+  /* 2. Якщо вибраний останній tab — зняти закруглення у правого краю контенту */
+  .tabs-lift
+    > .tab:last-of-type:is(.tab-active, [aria-selected="true"])
+    + .tab-content,
+  .tabs-lift > .tab:last-of-type:has(:checked) + .tab-content {
+    border-top-right-radius: 0 !important;
+  }
 }
 
 .full-center {
@@ -52,26 +52,26 @@
   @apply h-full w-full;
 }
 
-.center{
+.center {
   @apply flex items-center justify-center;
 }
 
-.center-between{
+.center-between {
   @apply flex items-center justify-between;
 }
 
-.bottom{
+.bottom {
   @apply flex items-end justify-center;
 }
 
-.up{
+.up {
   @apply flex items-start justify-center;
 }
 
-.left{
+.left {
   @apply flex items-center justify-start;
 }
 
-.right{
+.right {
   @apply flex items-center justify-end;
 }

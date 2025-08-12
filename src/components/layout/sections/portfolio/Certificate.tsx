@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Directions } from "../../../animations/types";
 import { useAppSelector } from "../../../../_hooks/hooks";
 import LazyImage from "../../../ui/LazyImage";
+import BorderBlick from "../../../background/borderBlick";
 
 export default function CertificateSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
@@ -43,26 +44,28 @@ export default function CertificateSection() {
         }
 
         return (
-          <AnimatedContainer
-            direction={direction}
-            delay={0.1 + index * 0.05}
-            key={index}
-            className={`certificate-container ${theme === "light" && "light"}`}
-          >
-            <a
+          <BorderBlick className="rounded-lg">
+            <AnimatedContainer
+              direction={direction}
+              delay={0.1 + index * 0.05}
               key={index}
-              href={c.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="certificate-link"
+              className="certificate-container"
             >
-              <LazyImage
-                src={c.img}
-                className={`certificate-img`}
-                alt={`certificate img ${index}`}
-              />
-            </a>
-          </AnimatedContainer>
+              <a
+                key={index}
+                href={c.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="certificate-link"
+              >
+                <LazyImage
+                  src={c.img}
+                  className={`certificate-img`}
+                  alt={`certificate img ${index}`}
+                />
+              </a>
+            </AnimatedContainer>
+          </BorderBlick>
         );
       })}
     </section>
