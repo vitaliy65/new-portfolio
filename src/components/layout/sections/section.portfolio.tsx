@@ -3,19 +3,10 @@ import { BrainCircuit, CodeIcon, FileArchive, Sparkle } from "lucide-react";
 import ProjectsSection from "./portfolio/Projects";
 import CertificateSection from "./portfolio/Certificate";
 import TechStackSection from "./portfolio/TechStack";
-import NavButton from "./portfolio/_components/NavButton";
-import { useState } from "react";
-import { AnimatePresence } from "motion/react";
 import AnimatedContainer from "../../animations/AnimatedContainer";
 import { Directions } from "../../animations/types";
-import { useAppSelector } from "../../../_hooks/hooks";
 
 export default function PortfolioSection() {
-  const [activeSection, setActiveSection] = useState<
-    "projects" | "certificates" | "techstack"
-  >("projects");
-  const theme = useAppSelector((s) => s.theme.theme);
-
   return (
     <section className="portfolio-section-main" id="portfolio">
       {/* first */}

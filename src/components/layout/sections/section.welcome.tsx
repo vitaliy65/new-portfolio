@@ -6,13 +6,10 @@ import AnimatedIcon from "../../animations/AnimatedIcon";
 import Telegram from "../../../assets/component/Telegram";
 import AnimatedContainer from "../../animations/AnimatedContainer";
 import { Directions } from "../../animations/types";
-import { useAppSelector } from "../../../_hooks/hooks";
 import CodeMockup from "./welcome/CodeMockup";
 import BorderBlick from "../../background/borderBlick";
 
 export default function WelcomeSection() {
-  const theme = useAppSelector((s) => s.theme.theme);
-
   return (
     <section className="welcome-section-main" id="welcome">
       {/* left side */}

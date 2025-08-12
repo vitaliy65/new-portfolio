@@ -2,7 +2,6 @@ import HeaderButton from "./header/header.button";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
-import HeaderThemeButton from "./header/HeaderThemeButton";
 import HeaderSideButton from "./header/header.side.button";
 
 export default function Header() {
@@ -115,7 +114,6 @@ export default function Header() {
                     href="#contact"
                     onClick={() => setOpen(false)}
                   />
-                  <HeaderThemeButton isInMenu={true} />
                 </div>
               </>
             )}

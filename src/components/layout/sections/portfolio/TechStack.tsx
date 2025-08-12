@@ -2,13 +2,11 @@ import { techStack } from "../../../../_data/techStack";
 import AnimatedContainer from "../../../animations/AnimatedContainer";
 import { useEffect, useState } from "react";
 import { Directions } from "../../../animations/types";
-import { useAppSelector } from "../../../../_hooks/hooks";
 import LazyImage from "../../../ui/LazyImage";
 import BorderBlick from "../../../background/borderBlick";
 
 export default function TechStackSection() {
   const [isXlScreen, setIsXlScreen] = useState(window.innerWidth >= 1280);
-  const theme = useAppSelector((s) => s.theme.theme);
 
   useEffect(() => {
     const checkScreenSize = () => {

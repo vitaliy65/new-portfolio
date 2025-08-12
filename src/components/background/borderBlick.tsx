@@ -1,4 +1,4 @@
-import React, { type JSX } from "react";
+import React from "react";
 
 interface BorderBlickProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactElement[] | React.ReactElement;
@@ -8,7 +8,6 @@ interface BorderBlickProps extends React.HTMLAttributes<HTMLDivElement> {
 export default function BorderBlick({
   children,
   className = "",
-  ...rest
 }: BorderBlickProps) {
   return (
     <div
