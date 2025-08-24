@@ -32,11 +32,11 @@ export const projects: Project[] = [
     liveDemo: "https://better-fitness.vercel.app/",
   },
   {
-    title: "Portfolio (Old Version)",
+    title: "Office UA next",
     description:
-      "This is the old version of my portfolio, showcasing my previous projects and skills before the current design and structure.",
-    image: "/projects/old-portfolio.png",
-    link: "https://github.com/vitaliy65/Portfolio",
-    liveDemo: "https://portfoliopv.vercel.app/",
+      "Is an updated version of Office UA, which has all the functionality of the online shop",
+    image: "/projects/Office-UA-next.png",
+    link: "https://github.com/vitaliy65/office-ua-next",
+    liveDemo: "https://office-ua-next.onrender.com/",
   },
 ];
