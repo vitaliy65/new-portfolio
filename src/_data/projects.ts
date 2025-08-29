@@ -37,6 +37,6 @@ export const projects: Project[] = [
       "Is an updated version of Office UA, which has all the functionality of the online shop",
     image: "/projects/Office-UA-next.png",
     link: "https://github.com/vitaliy65/office-ua-next",
-    liveDemo: "https://office-ua-next.onrender.com/",
+    liveDemo: "https://office-ua-next.vercel.app/",
   },
 ];
